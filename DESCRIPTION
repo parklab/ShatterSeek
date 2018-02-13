@@ -1,0 +1,15 @@
+Package: shatterSeek
+Type: Package
+Title: Chromothripis detection from structural variation and copy
+        number variation data
+Version: 0.4
+Date: 2017-05-25
+Author: Isidro Cortes-Ciriano and Ruibin Xi
+Maintainer: Ruibin Xi <ruibinxi@gmail.com>; Isidro Cortes-Ciriano <isidrolauscher@gmail.com>
+Description: shatterSeek is developed for detecting chromothripis 
+Depends: R (>= 3.0.1),methods,BiocGenerics,foreach,parallel,doMC,graph
+Imports: GenomicRanges,IRanges,MASS,ggplot2,grid,gridExtra,plyr
+License: GPL (>= 2)
+Repository: CRAN
+LazyData: no
+Packaged: 2017-05-25 13:39:14 UTC; Isidro

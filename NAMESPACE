@@ -1,5 +1,7 @@
 import(methods)
 
+import(S4Vectors)
+
 importFrom(stats, setNames)
 
 import(BiocGenerics)
@@ -19,6 +21,7 @@ import(gridExtra)
 #import(ggrepel)
 
 import(plyr)
+
 
 
 export(shatterseek,SVs,CNVsegs,getSVs,getSegs, cluster.SV, statistical_criteria,peak.count, plot_chromothripsis)

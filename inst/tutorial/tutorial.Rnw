@@ -125,6 +125,7 @@ Once the SV clusters are detected, Shatterseek evaluates whether the distributio
 i.e., deletion-like (+/-; or "head"/"tail"), duplication-like (-/+), head-to-head (+/+), and tail-to-tail (-/-) inversions,
 diverges from a multinomial distribution with equal probabilities for each SV category using the goodness-of-fit test for the multinomial distribution using the from the R package stats (chiq.test function).
 The types of SVs are determined by the orientation of the reads mapped to the breakpoints (see \cite{Zhang2013} for further details).
+We term this test 'fragment joins' test.
 
 \subsubsection{Chromosomal enrichment of breakpoints}
 Massive chromothripsis events, which involve hundreds of SVs,
@@ -132,7 +133,7 @@ generally affect entire or multiple chromosomes against the background of
 quiescent genomes.
 Thus, in these cases the chromosomes harboring chromothripsis are highly enriched for breakpoints.
 An example of a chromothripsis event is depicted in Figure 1.
-
+We term this test 'chromosomal breakpoint enrichment' test.
 
 To test for the enrichment of breakpoints in each chromosome,
 Shatterseek uses the binomial test corrected for mappability. 
@@ -145,6 +146,7 @@ Therefore, this criterion needs to be interpreted carefully on a per-case basis.
 \subsubsection{Random distribution of breakpoints}
 Shatterseek also evaluates whether the distribution of the breakpoints comprised the SV clusters
 differs from an exponential as described by Korbel and Campbell \cite{Korbel2013}.
+We term this test 'random distribution of breakpoints' test.
 
 \subsubsection{Number of oscillating copy number segments}
 A major feature of chromothripsis that can be detected from copy number data is the 
@@ -231,12 +233,18 @@ To install Shatterseek type the following in R:
 <<echo=TRUE,results='hide',warning=FALSE,message=FALSE,eval=FALSE,tidy=TRUE,render=T>>=
 sessionInfo()
 require(devtools)
-install_github(“”)
+install_github("parklab/ShatterSeek")
 @
-Alternatively, please download and install Shatterseek by running in a bash terminal:\\
+Alternatively, please download the latest release of Shatterseek by running in a bash terminal:\\
 <<engine='bash',eval=FALSE>>=
-wget XXXXXXXXXX
-R CMD INSTALL shatterSeek_0.4
+git clone git@github.com:parklab/ShatterSeek.git && unzip ShatterSeek-master.zip && R CMD INSTALL ShatterSeek-master
+@
+
+To install the development branch of Shatterseek please run:\\
+<<engine='bash',eval=FALSE>>=
+wget XX
+unzip
+R CMD INSTALL XX
 @
 
 \subsection{Load SVs and CN data into R}
@@ -372,34 +380,58 @@ print(paste0("Running time (s): ",end_time - start_time))
 
 print(head(chromothripsis@chromSummary))
 @
-The 'clusterSize' column indicates the size of the largest cluster of interleaved SVs detected per chromosome.
+%The 'clusterSize' column indicates the size of the largest cluster of interleaved SVs detected per chromosome.
 
-<<echo=TRUE,results='hide',warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T>>=
-#chromothripsis@chromSummary 
-detach("package:shatterSeek", unload=TRUE)
-library(shatterSeek)
-#o = statistical_criteria(chromothripsis)
+% <<echo=TRUE,results='hide',warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T>>=
+% #chromothripsis@chromSummary 
+% detach("package:shatterSeek", unload=TRUE)
+% library(shatterSeek)
+% @
+
+
+The function {\it shatterseek} returns an instance of a class that contains two slots, namely:
+{\it detail} and {\it chromSummary}. 
+The slot {\it detail} contains a list containing the input data (SV and CNV calls), 
+as well as intermediate results obtained by running the graph-based approach
+implemented to discover clusters of interleaved SVs:
+<<echo=TRUE,warning=FALSE,message=FALSE,eval=TRUE,fig.align='center'>>=
+names(chromothripsis@detail)
 @
 
-
-The function {\it shatterseek} returns a list containing two objects:
+The slot {\it chromothripsis@chromSummary} is a data.frame where each row corresponds to a chromosome,
+and each column to the value for the statistical metrics and additional information.
+The columns are:
 
 \begin{itemize}
-\item sd
-
-
-%%% SUMMARY
-\item chromSummary: a data.frame containing the results for all statistical criteria described above and additional information. 
-Each row corresponds to a chromosome (i.e., 1-22, and X), whereas the columns contain the following information:
-\begin{itemize}
-\item sdf
-\item
-\item
-\item
-\item
-\item
+\item chrom: chromosome
+\item start: start position of the cluster of interleaved SVs
+\item end: end position of the cluster of interleaved SVs
+\item number\_DEL: number of intrachromosomal deletion-like SVs (+/-) mapped within the cluster region 
+\item number\_DUP: number of intrachromosomal duplication-like SVs (-/+) mapped within the cluster region
+\item number\_h2hINV: number of intrachromosomal head-to-head SVs (+/+) mapped within the cluster region
+\item number\_t2tINV: number of intrachromosomal tail-to-tail SVs (-/-) mapped within the cluster region
+\item number\_TRA: number of interchromosomal SVs mapped within the cluster
+\item clusterSize\_including\_TRA: total number of SVs (including inter- and intrachromosomal SVs) mapped to the cluster region
+\item number\_SVs\_sample: total number of SVs (including inter- and intrachromosomal SVs) detected in the sample
+\item number\_CNV\_segments: number of CN segments located within the cluster boundaries
+\item pval\_fragment\_joins: P value for the fragment joins test considering only the intrachromsomal SVs mapped to the cluster region
+\item chr\_breakpoint\_enrichment: P value for the "chromosomal breakpoint enrichment" test
+\item pval\_exp\_chr: P value for the 'random distribution of breakpoints' test considering all breakpoints in the  chromosome
+\item pval\_exp\_cluster: P value for the 'random distribution of breakpoints' test considering only the breakpoints mapped to the cluster region
+\item max\_number\_oscillating\_CN\_segments\_2\_states: Maximum number of uninterrupted oscillations between 2 CN states in the cluster region
+\item max\_number\_oscillating\_CN\_segments\_3\_states: Maximum number of uninterrupted oscillations across 3 CN states in the cluster region
+\item number\_CN\_segments\_chr: number of CN segments in the chromosome 
+\item max\_number\_oscillating\_CN\_segments\_2\_states\_chr: Maximum number of uninterrupted oscillations between 2 CN states in the chromosome
+\item max\_number\_oscillating\_CN\_segments\_3\_states\_chr: Maximum number of uninterrupted oscillations across 3 CN states in the chromosome
+\item inter\_number\_DEL: number of interchromosomal deletion-like SVs (+/-) with one breakpoint mapped within the cluster region
+\item inter\_number\_DUP: number of interchromosomal duplication-like SVs (-/+) with one breakpoint mapped within the cluster region
+\item inter\_number\_h2hINV: number of interchromosomal head-to-head SVs (+/+) with one breakpoint mapped within the cluster region
+\item inter\_number\_t2tINV: number of interchromosomal tail-to-tail SVs (-/-) with one breakpoint mapped within the cluster region
+\item inter\_pval\_fragment\_joins: P value for the fragment joins test considering the inter- and intrachromosomal SVs mapped to the cluster region
+\item inter\_other\_chroms: chromosomes linked by at least 2 SVs with the cluster region
+\item inter\_other\_chroms\_coords\_all: chromosomal coordinates for the clusters of SVs detected in other chromosomes linked by at least 2 SVs with the cluster region detected in the chromosome under consideration (i.e. the one specified in 'chrom')
 \end{itemize}
-\end{itemize}
+
 
 
 
@@ -407,32 +439,64 @@ Each row corresponds to a chromosome (i.e., 1-22, and X), whereas the columns co
 
 \section{Visualization of chromothripsis regions}
 
-<<echo=TRUE,warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T,fig.align='center',fig.cap="Chromothripsis regions detected in patient DO17373.",out.width='24cm'>>=
+ShatterSeek provides functionalities to inspect the detected chromothripsis regions. 
+The function {\it plot\_chromothripsis} takes as input the output of the function 
+{\it shatterseek} and a chromosome number. 
+It returns a list containing 4 ggplot objects:
+\begin{itemize}
+\item ideogram of the affected region (only hg19 is supported at the moment). 
+\item Representatin of the SVs. SVs are depicted as arcs with the breakpoints represented by black points. 
+The breakpoints corresponding to interchromosomal SVs are depicted as colored points.
+Duplication-like SVs, deletion-like SVs, head-to-head and tail-to-tail inversions are depicted by default in blue, orange, black, and green, respectively.
+\item Total CN profile. Each CN segment is represented by a black rectangle.
+\item A subset of the information for the depicted region is given in table format.
+\end{itemize} 
+
+This four ggplot objects, which can be modified to tailor the user's needs, 
+can be easily combined using the function arrangeGrob from the R package gridExtra,
+and visualized using e.g. the function {\it plot\_grid} from the R package cowplot.
+
+<<echo=TRUE,warning=FALSE,message=FALSE,eval=TRUE,fig.align='center',fig.cap="Chromothripsis regions detected in patient DO17373 in chromosomes 2 and 3.",include=TRUE,out.width = '85%',out.height='55%'>>=
 library(gridExtra)
 plots_chr3 = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = "3")
-#grid.arrange(plots_chr3[[1]],plots_chr3[[2]],plots_chr3[[3]],plots_chr3[[4]],nrow=4,ncol=1,heights=c(0.2,.4,.55,.25))
-plot_chr3 = arrangeGrob(plots_chr3[[1]],plots_chr3[[2]],plots_chr3[[3]],plots_chr3[[4]],
-                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.25))
+plot_chr3 = arrangeGrob(plots_chr3[[1]],
+                        plots_chr3[[2]],
+                        plots_chr3[[3]],
+                        plots_chr3[[4]],
+                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.4))
 
 plots_chr2 = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = "2")
-plot_chr2 = arrangeGrob(plots_chr2[[1]],plots_chr2[[2]],plots_chr2[[3]],plots_chr2[[4]],
-                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.25))
+plot_chr2 = arrangeGrob(plots_chr2[[1]],
+                        plots_chr2[[2]],
+                        plots_chr2[[3]],
+                        plots_chr2[[4]],
+                         nrow=4,ncol=1,heights=c(0.2,.4,.4,.4))
 
 plots_chr21 = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = "21")
-plot_chr21 = arrangeGrob(plots_chr21[[1]],plots_chr21[[2]],plots_chr21[[3]],plots_chr21[[4]],
-                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.25))
+plot_chr21 = arrangeGrob(plots_chr21[[1]],
+                         plots_chr21[[2]],
+                         plots_chr21[[3]],
+                         plots_chr21[[4]],
+                         nrow=4,ncol=1,heights=c(0.2,.4,.4,.4))
 
 plots_chrX = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = "X")
-plot_chrX = arrangeGrob(plots_chrX[[1]],plots_chrX[[2]],plots_chrX[[3]],plots_chrX[[4]],
-                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.25))
+plot_chrX = arrangeGrob(plots_chrX[[1]],
+                        plots_chrX[[2]],
+                        plots_chrX[[3]],
+                        plots_chrX[[4]],
+                         nrow=4,ncol=1,heights=c(0.2,.4,.4,.4))
 
-grid.arrange(plot_chr2,plot_chr3,plot_chr21,plot_chrX,ncol=2,nrow=2,heights=c(.5,.5),widths=c(.5,.5))
+library(cowplot)
+plot_grid(plot_chr3,plot_chr2)
 @
 
-
-arrangeGrob(plots[[1]],plots[[2]],plots[[3]],plots[[4]],nrow=4,ncol=1,heights=c(0.2,.4,.55,.25))
-
-\section{Visualization of multichromosomal chromothripsis events}
+The plots can also be combined into a grid of e.g. four plots and saved to a file:
+<<echo=F,warning=FALSE,results='hide',message=FALSE,eval=TRUE,tidy=TRUE,render=T>>=
+pdf("chromothripsis_DO17373.pdf",width=(18.9/2.4), height=(27/2.4) )
+grid.arrange(plot_chr3,plot_chr3,plot_chr21,plot_chrX,
+             nrow=2,ncol=2,widths=c(2,2))
+dev.off()
+@
 
 
 \section{Bibliography}

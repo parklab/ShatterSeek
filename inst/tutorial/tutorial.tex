@@ -176,6 +176,7 @@ Once the SV clusters are detected, Shatterseek evaluates whether the distributio
 i.e., deletion-like (+/-; or "head"/"tail"), duplication-like (-/+), head-to-head (+/+), and tail-to-tail (-/-) inversions,
 diverges from a multinomial distribution with equal probabilities for each SV category using the goodness-of-fit test for the multinomial distribution using the from the R package stats (chiq.test function).
 The types of SVs are determined by the orientation of the reads mapped to the breakpoints (see \cite{Zhang2013} for further details).
+We term this test 'fragment joins' test.
 
 \subsubsection{Chromosomal enrichment of breakpoints}
 Massive chromothripsis events, which involve hundreds of SVs,
@@ -183,7 +184,7 @@ generally affect entire or multiple chromosomes against the background of
 quiescent genomes.
 Thus, in these cases the chromosomes harboring chromothripsis are highly enriched for breakpoints.
 An example of a chromothripsis event is depicted in Figure 1.
-
+We term this test 'chromosomal breakpoint enrichment' test.
 
 To test for the enrichment of breakpoints in each chromosome,
 Shatterseek uses the binomial test corrected for mappability. 
@@ -196,6 +197,7 @@ Therefore, this criterion needs to be interpreted carefully on a per-case basis.
 \subsubsection{Random distribution of breakpoints}
 Shatterseek also evaluates whether the distribution of the breakpoints comprised the SV clusters
 differs from an exponential as described by Korbel and Campbell \cite{Korbel2013}.
+We term this test 'random distribution of breakpoints' test.
 
 \subsubsection{Number of oscillating copy number segments}
 A major feature of chromothripsis that can be detected from copy number data is the 
@@ -282,18 +284,28 @@ To install Shatterseek type the following in R:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{sessionInfo}()
-\hlkwd{require}(devtools)
-\hlkwd{install_github}(“”)
+\hlkwd{sessionInfo}\hlstd{()}
+\hlkwd{require}\hlstd{(devtools)}
+\hlkwd{install_github}\hlstd{(}\hlstr{"parklab/ShatterSeek"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
-Alternatively, please download and install Shatterseek by running in a bash terminal:\\
+Alternatively, please download the latest release of Shatterseek by running in a bash terminal:\\
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-wget XXXXXXXXXX
-R CMD INSTALL shatterSeek_0.4
+git clone git@github.com:parklab/ShatterSeek.git && unzip ShatterSeek-master.zip && R CMD INSTALL ShatterSeek-master
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+To install the development branch of Shatterseek please run:\\
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+wget XX
+unzip
+R CMD INSTALL XX
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -486,7 +498,7 @@ the statistical criteria described above.
 \hlkwd{print}\hlstd{(}\hlkwd{paste0}\hlstd{(}\hlstr{"Running time (s): "}\hlstd{,end_time} \hlopt{-} \hlstd{start_time))}
 \end{alltt}
 \begin{verbatim}
-## [1] "Running time (s): 17.0460901260376"
+## [1] "Running time (s): 17.6939280033112"
 \end{verbatim}
 \begin{alltt}
 \hlkwd{print}\hlstd{(}\hlkwd{head}\hlstd{(chromothripsis}\hlopt{@}\hlkwc{chromSummary}\hlstd{))}
@@ -515,8 +527,8 @@ the statistical criteria described above.
 ## 6                  NA                  NA              3.277719e-14
 ##   pval_exp_chr pval_exp_cluster
 ## 1           NA               NA
-## 2 1.606883e-07     0.000000e+00
-## 3 0.000000e+00     4.466794e-10
+## 2 3.568257e-13     0.000000e+00
+## 3 6.457834e-12     1.664855e-05
 ## 4           NA               NA
 ## 5           NA               NA
 ## 6           NA               NA
@@ -541,69 +553,98 @@ the statistical criteria described above.
 ## 4                     NA                                              NA
 ## 5                     NA                                              NA
 ## 6                     NA                                              NA
-##   max_number_oscillating_CN_segments_3_states_chr number_CN_segments
-## 1                                              NA                 NA
-## 2                                              13                 11
-## 3                                              13                 12
-## 4                                              NA                 NA
-## 5                                              NA                 NA
-## 6                                              NA                 NA
-##   inter_number_DEL inter_number_h2hINV inter_number_t2tINV
-## 1                0                   0                   0
-## 2                4                   2                   3
-## 3                4                   3                   4
-## 4                0                   0                   0
-## 5                0                   0                   0
-## 6                0                   0                   0
-##   inter_number_TRA inter_number_DUP inter_pval_fragment_joins
-## 1                0                0                        NA
-## 2                7                2                 0.8012520
-## 3                6                3                 0.9626925
-## 4                0                0                        NA
-## 5                0                0                        NA
-## 6                0                0                        NA
-##   inter_other_chroms inter_other_chroms_coords_all
-## 1                                                 
-## 2                  3          3:20704347-85709275;
-## 3                  2          2:11969466-75460870;
-## 4                                                 
-## 5                                                 
+##   max_number_oscillating_CN_segments_3_states_chr inter_number_DEL
+## 1                                              NA                0
+## 2                                              13                4
+## 3                                              13                4
+## 4                                              NA                0
+## 5                                              NA                0
+## 6                                              NA                0
+##   inter_number_h2hINV inter_number_t2tINV inter_number_DUP
+## 1                   0                   0                0
+## 2                   2                   3                2
+## 3                   3                   4                3
+## 4                   0                   0                0
+## 5                   0                   0                0
+## 6                   0                   0                0
+##   inter_pval_fragment_joins inter_other_chroms
+## 1                        NA                   
+## 2                 0.8012520                  3
+## 3                 0.9626925                  2
+## 4                        NA                   
+## 5                        NA                   
+## 6                        NA                   
+##   inter_other_chroms_coords_all
+## 1                              
+## 2          3:20704347-85709275;
+## 3          2:11969466-75460870;
+## 4                              
+## 5                              
 ## 6
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
-The 'clusterSize' column indicates the size of the largest cluster of interleaved SVs detected per chromosome.
+%The 'clusterSize' column indicates the size of the largest cluster of interleaved SVs detected per chromosome.
 
+% <<echo=TRUE,results='hide',warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T>>=
+% #chromothripsis@chromSummary 
+% detach("package:shatterSeek", unload=TRUE)
+% library(shatterSeek)
+% @
+
+
+The function {\it shatterseek} returns an instance of a class that contains two slots, namely:
+{\it detail} and {\it chromSummary}. 
+The slot {\it detail} contains a list containing the input data (SV and CNV calls), 
+as well as intermediate results obtained by running the graph-based approach
+implemented to discover clusters of interleaved SVs:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{#chromothripsis@chromSummary }
-\hlkwd{detach}\hlstd{(}\hlstr{"package:shatterSeek"}\hlstd{,} \hlkwc{unload}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\hlkwd{library}\hlstd{(shatterSeek)}
-\hlcom{#o = statistical_criteria(chromothripsis)}
+\hlkwd{names}\hlstd{(chromothripsis}\hlopt{@}\hlkwc{detail}\hlstd{)}
 \end{alltt}
+\begin{verbatim}
+##  [1] "SV"             "graph"          "connComp"       "num.chromth"   
+##  [5] "maxSVs"         "degree"         "numSVByChrom"   "maxClusterSize"
+##  [9] "SVinter"        "CNV"
+\end{verbatim}
 \end{kframe}
 \end{knitrout}
 
-
-The function {\it shatterseek} returns a list containing two objects:
+The slot {\it chromothripsis@chromSummary} is a data.frame where each row corresponds to a chromosome,
+and each column to the value for the statistical metrics and additional information.
+The columns are:
 
 \begin{itemize}
-\item sd
-
-
-%%% SUMMARY
-\item chromSummary: a data.frame containing the results for all statistical criteria described above and additional information. 
-Each row corresponds to a chromosome (i.e., 1-22, and X), whereas the columns contain the following information:
-\begin{itemize}
-\item sdf
-\item
-\item
-\item
-\item
-\item
+\item chrom: chromosome
+\item start: start position of the cluster of interleaved SVs
+\item end: end position of the cluster of interleaved SVs
+\item number\_DEL: number of intrachromosomal deletion-like SVs (+/-) mapped within the cluster region 
+\item number\_DUP: number of intrachromosomal duplication-like SVs (-/+) mapped within the cluster region
+\item number\_h2hINV: number of intrachromosomal head-to-head SVs (+/+) mapped within the cluster region
+\item number\_t2tINV: number of intrachromosomal tail-to-tail SVs (-/-) mapped within the cluster region
+\item number\_TRA: number of interchromosomal SVs mapped within the cluster
+\item clusterSize\_including\_TRA: total number of SVs (including inter- and intrachromosomal SVs) mapped to the cluster region
+\item number\_SVs\_sample: total number of SVs (including inter- and intrachromosomal SVs) detected in the sample
+\item number\_CNV\_segments: number of CN segments located within the cluster boundaries
+\item pval\_fragment\_joins: P value for the fragment joins test considering only the intrachromsomal SVs mapped to the cluster region
+\item chr\_breakpoint\_enrichment: P value for the "chromosomal breakpoint enrichment" test
+\item pval\_exp\_chr: P value for the 'random distribution of breakpoints' test considering all breakpoints in the  chromosome
+\item pval\_exp\_cluster: P value for the 'random distribution of breakpoints' test considering only the breakpoints mapped to the cluster region
+\item max\_number\_oscillating\_CN\_segments\_2\_states: Maximum number of uninterrupted oscillations between 2 CN states in the cluster region
+\item max\_number\_oscillating\_CN\_segments\_3\_states: Maximum number of uninterrupted oscillations across 3 CN states in the cluster region
+\item number\_CN\_segments\_chr: number of CN segments in the chromosome 
+\item max\_number\_oscillating\_CN\_segments\_2\_states\_chr: Maximum number of uninterrupted oscillations between 2 CN states in the chromosome
+\item max\_number\_oscillating\_CN\_segments\_3\_states\_chr: Maximum number of uninterrupted oscillations across 3 CN states in the chromosome
+\item inter\_number\_DEL: number of interchromosomal deletion-like SVs (+/-) with one breakpoint mapped within the cluster region
+\item inter\_number\_DUP: number of interchromosomal duplication-like SVs (-/+) with one breakpoint mapped within the cluster region
+\item inter\_number\_h2hINV: number of interchromosomal head-to-head SVs (+/+) with one breakpoint mapped within the cluster region
+\item inter\_number\_t2tINV: number of interchromosomal tail-to-tail SVs (-/-) with one breakpoint mapped within the cluster region
+\item inter\_pval\_fragment\_joins: P value for the fragment joins test considering the inter- and intrachromosomal SVs mapped to the cluster region
+\item inter\_other\_chroms: chromosomes linked by at least 2 SVs with the cluster region
+\item inter\_other\_chroms\_coords\_all: chromosomal coordinates for the clusters of SVs detected in other chromosomes linked by at least 2 SVs with the cluster region detected in the chromosome under consideration (i.e. the one specified in 'chrom')
 \end{itemize}
-\end{itemize}
+
 
 
 
@@ -611,45 +652,72 @@ Each row corresponds to a chromosome (i.e., 1-22, and X), whereas the columns co
 
 \section{Visualization of chromothripsis regions}
 
+ShatterSeek provides functionalities to inspect the detected chromothripsis regions. 
+The function {\it plot\_chromothripsis} takes as input the output of the function 
+{\it shatterseek} and a chromosome number. 
+It returns a list containing 4 ggplot objects:
+\begin{itemize}
+\item ideogram of the affected region (only hg19 is supported at the moment). 
+\item Representatin of the SVs. SVs are depicted as arcs with the breakpoints represented by black points. 
+The breakpoints corresponding to interchromosomal SVs are depicted as colored points.
+Duplication-like SVs, deletion-like SVs, head-to-head and tail-to-tail inversions are depicted by default in blue, orange, black, and green, respectively.
+\item Total CN profile. Each CN segment is represented by a black rectangle.
+\item A subset of the information for the depicted region is given in table format.
+\end{itemize} 
+
+This four ggplot objects, which can be modified to tailor the user's needs, 
+can be easily combined using the function arrangeGrob from the R package gridExtra,
+and visualized using e.g. the function {\it plot\_grid} from the R package cowplot.
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlkwd{library}\hlstd{(gridExtra)}
 \hlstd{plots_chr3} \hlkwb{=} \hlkwd{plot_chromothripsis}\hlstd{(}\hlkwc{shatterSeek_output} \hlstd{= chromothripsis,}\hlkwc{chr} \hlstd{=} \hlstr{"3"}\hlstd{)}
-\hlcom{#grid.arrange(plots_chr3[[1]],plots_chr3[[2]],plots_chr3[[3]],plots_chr3[[4]],nrow=4,ncol=1,heights=c(0.2,.4,.55,.25))}
-\hlstd{plot_chr3} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr3[[}\hlnum{1}\hlstd{]],plots_chr3[[}\hlnum{2}\hlstd{]],plots_chr3[[}\hlnum{3}\hlstd{]],plots_chr3[[}\hlnum{4}\hlstd{]],}
-                        \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.25}\hlstd{))}
+\hlstd{plot_chr3} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr3[[}\hlnum{1}\hlstd{]],}
+                        \hlstd{plots_chr3[[}\hlnum{2}\hlstd{]],}
+                        \hlstd{plots_chr3[[}\hlnum{3}\hlstd{]],}
+                        \hlstd{plots_chr3[[}\hlnum{4}\hlstd{]],}
+                        \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{))}
 
 \hlstd{plots_chr2} \hlkwb{=} \hlkwd{plot_chromothripsis}\hlstd{(}\hlkwc{shatterSeek_output} \hlstd{= chromothripsis,}\hlkwc{chr} \hlstd{=} \hlstr{"2"}\hlstd{)}
-\hlstd{plot_chr2} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr2[[}\hlnum{1}\hlstd{]],plots_chr2[[}\hlnum{2}\hlstd{]],plots_chr2[[}\hlnum{3}\hlstd{]],plots_chr2[[}\hlnum{4}\hlstd{]],}
-                        \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.25}\hlstd{))}
+\hlstd{plot_chr2} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr2[[}\hlnum{1}\hlstd{]],}
+                        \hlstd{plots_chr2[[}\hlnum{2}\hlstd{]],}
+                        \hlstd{plots_chr2[[}\hlnum{3}\hlstd{]],}
+                        \hlstd{plots_chr2[[}\hlnum{4}\hlstd{]],}
+                         \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{))}
 
 \hlstd{plots_chr21} \hlkwb{=} \hlkwd{plot_chromothripsis}\hlstd{(}\hlkwc{shatterSeek_output} \hlstd{= chromothripsis,}\hlkwc{chr} \hlstd{=} \hlstr{"21"}\hlstd{)}
-\hlstd{plot_chr21} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr21[[}\hlnum{1}\hlstd{]],plots_chr21[[}\hlnum{2}\hlstd{]],plots_chr21[[}\hlnum{3}\hlstd{]],plots_chr21[[}\hlnum{4}\hlstd{]],}
-                        \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.25}\hlstd{))}
+\hlstd{plot_chr21} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr21[[}\hlnum{1}\hlstd{]],}
+                         \hlstd{plots_chr21[[}\hlnum{2}\hlstd{]],}
+                         \hlstd{plots_chr21[[}\hlnum{3}\hlstd{]],}
+                         \hlstd{plots_chr21[[}\hlnum{4}\hlstd{]],}
+                         \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{))}
 
 \hlstd{plots_chrX} \hlkwb{=} \hlkwd{plot_chromothripsis}\hlstd{(}\hlkwc{shatterSeek_output} \hlstd{= chromothripsis,}\hlkwc{chr} \hlstd{=} \hlstr{"X"}\hlstd{)}
+\hlstd{plot_chrX} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chrX[[}\hlnum{1}\hlstd{]],}
+                        \hlstd{plots_chrX[[}\hlnum{2}\hlstd{]],}
+                        \hlstd{plots_chrX[[}\hlnum{3}\hlstd{]],}
+                        \hlstd{plots_chrX[[}\hlnum{4}\hlstd{]],}
+                         \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{))}
+
+\hlkwd{library}\hlstd{(cowplot)}
+\hlkwd{plot_grid}\hlstd{(plot_chr3,plot_chr2)}
 \end{alltt}
+\end{kframe}\begin{figure}
+
+{\centering \includegraphics[width=0.85\linewidth,height=0.55\textheight]{figure/unnamed-chunk-11-1} 
+
+}
+
+\caption[Chromothripsis regions detected in patient DO17373 in chromosomes 2 and 3]{Chromothripsis regions detected in patient DO17373 in chromosomes 2 and 3.}\label{fig:unnamed-chunk-11}
+\end{figure}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: evaluation nested too deeply: infinite recursion / options(expressions=)?}}\begin{alltt}
-\hlstd{plot_chrX} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chrX[[}\hlnum{1}\hlstd{]],plots_chrX[[}\hlnum{2}\hlstd{]],plots_chrX[[}\hlnum{3}\hlstd{]],plots_chrX[[}\hlnum{4}\hlstd{]],}
-                        \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.25}\hlstd{))}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(plots\_chrX[[1]], plots\_chrX[[2]], plots\_chrX[[3]], : object 'plots\_chrX' not found}}\begin{alltt}
-\hlkwd{grid.arrange}\hlstd{(plot_chr2,plot_chr3,plot_chr21,plot_chrX,}\hlkwc{ncol}\hlstd{=}\hlnum{2}\hlstd{,}\hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{.5}\hlstd{,}\hlnum{.5}\hlstd{),}\hlkwc{widths}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{.5}\hlstd{,}\hlnum{.5}\hlstd{))}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(...): object 'plot\_chrX' not found}}\end{kframe}
 \end{knitrout}
 
+The plots can also be combined into a grid of e.g. four plots and saved to a file:
 
-arrangeGrob(plots[[1]],plots[[2]],plots[[3]],plots[[4]],nrow=4,ncol=1,heights=c(0.2,.4,.55,.25))
-
-\section{Visualization of multichromosomal chromothripsis events}
 
 
 \section{Bibliography}

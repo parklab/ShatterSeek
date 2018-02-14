@@ -19,7 +19,7 @@ statistical_criteria = function(input){
     summary$pval_exp_cluster <- rep(NA,23)
     # oscillating
     summary$max_number_oscillating_CN_segments_2_states <- rep(NA,23)
-    summary$max_number_oscillating_CN_segments_2_states_3states <- rep(NA,23)
+    summary$max_number_oscillating_CN_segments_3_states <- rep(NA,23)
     summary$number_CN_segments_chr <- rep(NA,23)
     summary$max_number_oscillating_CN_segments_2_states_chr <- rep(NA,23)
     summary$max_number_oscillating_CN_segments_3_states_chr <- rep(NA,23)
@@ -30,7 +30,7 @@ statistical_criteria = function(input){
                                 number_DEL=rep(0,l_candidate_chrs),
                                 number_h2hINV=rep(0,l_candidate_chrs),
                                 number_t2tINV=rep(0,l_candidate_chrs),
-                                number_TRA=rep(0,l_candidate_chrs),
+                                #number_TRA=rep(0,l_candidate_chrs),
                                 number_DUP=rep(0,l_candidate_chrs),
                                 pval_fragment_joins=rep(NA,l_candidate_chrs))
 
@@ -61,10 +61,10 @@ statistical_criteria = function(input){
             #i_i2 = fmax(1,v)
             number_CN_segments = length(v)
             max_number_oscillating_CN_segments_2_states = fmaxmax(1,v) #XXX
-            max_number_oscillating_CN_segments_2_states_3states = fmaxmax(1,v_3states) #XXX
+            max_number_oscillating_CN_segments_3_states = fmaxmax(1,v_3states) #XXX
             summary$number_CN_segments_chr[index_chromosome] = number_CN_segments
             summary$max_number_oscillating_CN_segments_2_states_chr[index_chromosome] = max_number_oscillating_CN_segments_2_states
-            summary$max_number_oscillating_CN_segments_3_states_chr[index_chromosome] = max_number_oscillating_CN_segments_2_states_3states
+            summary$max_number_oscillating_CN_segments_3_states_chr[index_chromosome] = max_number_oscillating_CN_segments_3_states
         }
 
         if(nrow(SVsnow) !=0){
@@ -90,12 +90,12 @@ statistical_criteria = function(input){
                         v = (CNVsnow$total_cn[1:(k-2)] - CNVsnow$total_cn[3:k])
                         v_3states = 1*(abs(v) %in% c(0,1))
                         v = 1*(v ==0)
-                        max_number_oscillating_CN_segments_2_states_3states = fmaxmax(1,v_3states) #XXX
+                        max_number_oscillating_CN_segments_3_states = fmaxmax(1,v_3states) #XXX
                         number_CN_segments = length(v)
                         max_number_oscillating_CN_segments_2_states = fmaxmax(1,v) #XXX
 
-                        summary$max_number_oscillating_CN_segments_2_states_3states[index_chromosome] = max_number_oscillating_CN_segments_2_states_3states
-                        summary$number_CN_segments[index_chromosome] = number_CN_segments
+                        summary$max_number_oscillating_CN_segments_3_states[index_chromosome] = max_number_oscillating_CN_segments_3_states
+                        #summary$number_CN_segments[index_chromosome] = number_CN_segments
                         summary$max_number_oscillating_CN_segments_2_states[index_chromosome] = max_number_oscillating_CN_segments_2_states
                     }
                 }
@@ -192,7 +192,7 @@ statistical_criteria = function(input){
                     summary_inter$number_h2hINV[idxx] = obs[2]
                     summary_inter$number_t2tINV[idxx] = obs[3]
                     summary_inter$number_DUP[idxx] = obs[4]
-                    summary_inter$number_TRA[idxx] = nb_TRA
+                    #summary_inter$number_TRA[idxx] = nb_TRA
                     other_chroms[idxx] = as.character(paste(as.vector(selection_chrs),collapse="_"))
                     other_chroms_coords_all[idxx] = as.character(paste(as.vector(selection_chr_coords),collapse=""))
                     signif <- chisq.test(obs, p=rep(1/4,4))$p.val

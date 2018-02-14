@@ -7,7 +7,7 @@ Date: 2017-05-25
 Author: Isidro Cortes-Ciriano and Ruibin Xi
 Maintainer: Isidro Cortes-Ciriano <isidrolauscher@gmail.com>
 Description: shatterSeek is developed for detecting chromothripis 
-Depends: R (>= 3.0.1),methods,BiocGenerics,foreach,parallel,doMC,graph,S4Vectors
+Depends: R (>= 3.0.1),methods,BiocGenerics,foreach,graph,S4Vectors
 Imports: GenomicRanges,IRanges,MASS,ggplot2,grid,gridExtra
 License: GPL (>= 3)
 Repository: CRAN

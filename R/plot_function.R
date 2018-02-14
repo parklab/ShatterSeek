@@ -227,7 +227,7 @@ plot_chromothripsis <- function(shatterSeek_output, chr=chr,BAF=NULL,sample_name
 	chr_info = chr_info[chr_info$seqnames==chr,]
 	chr_info$y = rep(1,nrow(chr_info))
 
-	if(nrow(chr_info)>7){chr_info_annot=chr_info}else{
+	if(nrow(chr_info)<7){chr_info_annot=chr_info}else{
 	chr_info_annot=chr_info[seq(3,(nrow(chr_info)-3),3),]}
 
 	ideogram =ggplot(data=chr_info,aes(x=y,y=y)) +geom_point(colour="white")
@@ -236,7 +236,7 @@ plot_chromothripsis <- function(shatterSeek_output, chr=chr,BAF=NULL,sample_name
 				  fill = chr_info$color,color="black",size=.1) 
 
 	ideogram = ideogram +ylim(0,4)
-	ideogram = ideogram + annotate(geom = "text",x = (chr_info_annot$start+chr_info_annot$end)/2,y=chr_info_annot$y + 1.5,
+	ideogram = ideogram + annotate(geom = "text",x = (chr_info_annot$start+chr_info_annot$end)/2,y=chr_info_annot$y + 1.2,
 								   label=chr_info_annot$name,vjust=.5, angle=90,size=2)
 	ideogram = ideogram +theme_bw() + common_ggplot2_chrom + #xlim(min_coord,max_coord) + 
 		scale_x_continuous(expand = c(0.01,0.01)) +
@@ -287,9 +287,9 @@ plot_chromothripsis <- function(shatterSeek_output, chr=chr,BAF=NULL,sample_name
 						 "Links with other chrs")
 
 	mytheme <- gridExtra::ttheme_minimal(padding = unit(c(1.8,1.8),"mm"),
-										 core = list(fg_params=list(cex = .5)),
-										 colhead = list(fg_params=list(cex = .5)),
-										 rowhead = list(fg_params=list(cex = .5)))
+										 core = list(fg_params=list(cex = .6)),
+										 colhead = list(fg_params=list(cex = .6)),
+										 rowhead = list(fg_params=list(cex = .6)))
 
 	for (cc in 1:ncol(table_now)){if( is.numeric(table_now[,cc])){ table_now[,cc] = round(table_now[,cc],digits=2)  }}
 

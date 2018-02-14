@@ -115,7 +115,10 @@ cluster.SV = function(SV.sample,min.Size=1,chromNames){
 
 	ind.chr = which(SV.df$chrom1==SV.df$chrom2)
 	if(length(ind.chr)<1){
-		rt.value = list(SV=SV.df,graph=NULL,connComp=list(),num.chromth=0,chromothripsis=list(),chromothripsis.chr=c(),maxSVs=0,degree=list())
+		rt.value = list(SV=SV.df,graph=NULL,connComp=list(),num.chromth=0,
+						#chromothripsis=list(),
+						#chromothripsis.chr=c(),
+						maxSVs=0,degree=list())
 		rt.value$numSVByChrom = numSV.byChrom
 		rt.value$maxClusterSize = maxCluster.byChrom
 		return(rt.value)
@@ -160,7 +163,7 @@ cluster.SV = function(SV.sample,min.Size=1,chromNames){
 
 	ind.LargComp = which(sapply(cmpnt,length)>=min.Size)
 	chromothripsis.Reg = cmpnt[ind.LargComp]
-	chromothripsis.Reg.chr = sapply(chromothripsis.Reg,FUN=function(v){SV.df$chrom1[as.numeric(v[1])]})
+	#chromothripsis.Reg.chr = sapply(chromothripsis.Reg,FUN=function(v){SV.df$chrom1[as.numeric(v[1])]})
 
 	degree.chromtheripsis = list()
 	maxSVs = 0
@@ -174,7 +177,10 @@ cluster.SV = function(SV.sample,min.Size=1,chromNames){
 		maxSVs = max(sapply(chromothripsis.Reg,length))
 	}
 
-	rt.value=list(SV=SV.df,graph=gn,connComp=cmpnt,num.chromth=length(ind.LargComp),chromothripsis = chromothripsis.Reg,chromothripsis.chr=chromothripsis.Reg.chr,maxSVs = maxSVs,degree = degree.chromtheripsis)
+	rt.value=list(SV=SV.df,graph=gn,connComp=cmpnt,num.chromth=length(ind.LargComp),
+				  #chromothripsis = chromothripsis.Reg,
+				  #chromothripsis.chr=chromothripsis.Reg.chr,
+				  maxSVs = maxSVs,degree = degree.chromtheripsis)
 	rt.value$numSVByChrom = numSV.byChrom
 
 	tmp.chr = as.character(sapply(cmpnt,FUN=function(v){SV.df$chrom1[as.numeric(v[1])]}))

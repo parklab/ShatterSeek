@@ -28,8 +28,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2}Load SVs and CN data into R}{8}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Visualization of chromothripsis regions}{14}{section.5}
+\contentsline {section}{\numberline {5}Visualization of chromothripsis regions}{16}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Visualization of multichromosomal chromothripsis events}{16}{section.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliography}{16}{section.7}
+\contentsline {section}{\numberline {6}Bibliography}{19}{section.6}

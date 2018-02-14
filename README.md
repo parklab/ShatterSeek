@@ -32,7 +32,7 @@ A detailed tutorial illustrating how to use ShatterSeek is provided in ./inst/tu
 ShatterSeek is free for academic use **only**.
 For non-academic use, please email Dr. Tatiana Demidova-Rice at Harvard University Office of Technology Development (tatiana\_demidova-rice@harvard.edu)
 
-# Pre-requisites
+# Prerequisites
 
 MSIprofiler is written entirely in R (>= 3.0.1) and depends on the following packages:
 methods, BiocGenerics, graph, S4Vectors, GenomicRanges, IRanges, MASS, ggplot2, grid, and gridExtra

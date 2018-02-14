@@ -50,3 +50,8 @@ Alternatively you can install ShatterSeek directly from R using devtools:
 # How to use
 Please see the package tutorial (especially section "How to use Shatterkeek")
 
+# Contact
+If you have any questions or suggestions please contact us:
+Isidro Cortes Ciriano: isidrolauscher at gmail.com or isidro_cortesciriano at hms.harvard.edu
+Peter J Park: peter_park at hms.harvard.edu
+

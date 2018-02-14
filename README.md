@@ -39,13 +39,14 @@ methods, BiocGenerics, graph, S4Vectors, GenomicRanges, IRanges, MASS, ggplot2, 
 
 
 # Installation
-`$ git clone https://github.com/parklab/ShatterSeek.git
-
-`$ R CMD INSTALL ShatterSeek-master
+`$ git clone https://github.com/parklab/ShatterSeek.git`
+`$ R CMD INSTALL ShatterSeek-master`
 
 Alternatively you can install ShatterSeek directly from R using devtools:
-`$ library(devtools)
-`$ install_github("parklab/ShatterSeek")
+```R
+library(devtools)
+install_github("parklab/ShatterSeek")
+```
 
 # How to use
 Please see the package tutorial (especially section "How to use Shatterkeek")

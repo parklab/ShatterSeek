@@ -34,7 +34,7 @@ For non-academic use, please email Dr. Tatiana Demidova-Rice at Harvard Universi
 
 # Prerequisites
 
-MSIprofiler is written entirely in R (>= 3.0.1) and depends on the following packages:
+ShatterSeek is written entirely in R (>= 3.0.1) and depends on the following packages:
 methods, BiocGenerics, graph, S4Vectors, GenomicRanges, IRanges, MASS, ggplot2, grid, and gridExtra
 
 

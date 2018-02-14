@@ -8,7 +8,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2}Statistical criteria implemented in Shatterseek}{5}{subsection.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1}Equal distribution of fragment joints}{5}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1}Equal distribution of fragment joins}{5}{subsubsection.2.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.2.2}Chromosomal enrichment of breakpoints}{5}{subsubsection.2.2.2}
 \defcounter {refsection}{0}\relax 
@@ -20,16 +20,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3}Detection of multichromosomal chromothripsis events}{6}{subsection.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Recommended cut-off values to intepret the output of Shatterseek}{7}{section.3}
+\contentsline {section}{\numberline {3}Recommended cut-off values to interpret the output of Shatterseek}{7}{section.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Shatterkeek tutorial}{8}{section.4}
+\contentsline {section}{\numberline {4}How to use Shatterkeek}{8}{section.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1}Installation}{8}{subsection.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2}Load SVs and CN data into R}{8}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Visualization of chromothripsis regions}{12}{section.5}
+\contentsline {section}{\numberline {5}Visualization of chromothripsis regions}{14}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Visualization of multichromosomal chromothripsis events}{13}{section.6}
+\contentsline {section}{\numberline {6}Visualization of multichromosomal chromothripsis events}{16}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliography}{13}{section.7}
+\contentsline {section}{\numberline {7}Bibliography}{16}{section.7}

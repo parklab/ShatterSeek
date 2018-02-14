@@ -44,7 +44,7 @@ Therefore, chromothripsis represents a mechanism for the accrual of tens to hund
 Chromothripsis regions are characterized by copy number profiles oscillating between two or three states,
 (in cases where partial duplications follow chromothripsis), 
 interspersed loss of heterozygosity (LOH), and clusters of interleaved SVs, 
-where the proportions of fragment joints (i.e., duplication-like, deletion-like, head-to-head and tail-to-tail inversions) are roughly equal, consistent with the random stitching of genomic fragments through mostly non-homologous end-joining (NHEJ) DNA repair.\\
+where the proportions of fragment joins (i.e., duplication-like, deletion-like, head-to-head and tail-to-tail inversions) are roughly equal, consistent with the random stitching of genomic fragments through mostly non-homologous end-joining (NHEJ) DNA repair.\\
 \\
 Initial studies used array-derived copy number profiles to detect chromothripsis, 
 as the amount of whole-genome sequencing data sets was limited \cite{Kim2013,Cai2014}.
@@ -119,9 +119,9 @@ Once the clusters of interleaved SVs are detected, Shatterseek evaluates the fol
 
 % We decided to only consider the criteria of loss of heterozygosity proposed by (Korbel and Campbell, 2013) when examining the set of canonical chromothripsis calls detected in diploid genomes. We did not consider this criterion to call chromothripsis across the entire tumor cohort because we noticed that some bona fide chromothripsis cases identified in low-purity samples (e.g., Figure 2c) might not meet the cut-off for statistical significance due to the infiltration of normal tissue. In such a case, the allelic ratios (i.e., B allele frequencies) for heterozygous SNPs would not divert significantly from 0.5, and thus, would hamper the observation of alternating LOH patterns associated to copy losses (Song et al., 2012). This phenomenon is exacerbated when chromothripsis occurs in aneuploid tumors due to increased CN, and hence, chromothripsis events do not necessarily lead to LOH (see e.g., Supplementary Figure 5C).
 
-\subsubsection{Equal distribution of fragment joints}
+\subsubsection{Equal distribution of fragment joins}
 
-Once the SV clusters are detected, Shatterseek evaluates whether the distribution of DNA fragment joints,
+Once the SV clusters are detected, Shatterseek evaluates whether the distribution of DNA fragment joins,
 i.e., deletion-like (+/-; or "head"/"tail"), duplication-like (-/+), head-to-head (+/+), and tail-to-tail (-/-) inversions,
 diverges from a multinomial distribution with equal probabilities for each SV category using the goodness-of-fit test for the multinomial distribution using the from the R package stats (chiq.test function).
 The types of SVs are determined by the orientation of the reads mapped to the breakpoints (see \cite{Zhang2013} for further details).
@@ -198,9 +198,9 @@ satisfied by a candidate chromothripsis region.
 \begin{itemize}
 
 \item High confidence: at least 6 interleaved intrachromosomal SVs, 7 contiguous segments oscillating between 2 CN states, 
-the fragment joints test, and either the chromosomal enrichment or the exponential distribution of breakpoints test.
+the fragment joins test, and either the chromosomal enrichment or the exponential distribution of breakpoints test.
 
-\item High confidence: at least 3 interleaved intrachromosomal SVs and 4 or more interchromosomal SVs, 7 contiguous segments oscillating between 2 CN states and the fragment joints test.
+\item High confidence: at least 3 interleaved intrachromosomal SVs and 4 or more interchromosomal SVs, 7 contiguous segments oscillating between 2 CN states and the fragment joins test.
 
 \item Low confidence: at least 6 interleaved intrachromosomal SVs, 4, 5 or 6 adjacent segments oscillating between 2 CN states, the fragment joins test, and either the chromosomal enrichment or the exponential distribution of breakpoints test.
 
@@ -271,6 +271,8 @@ Shatterseek requires the SV data to be stored in a data.frame with the following
 \item pos2 (character): position for the second breakpoint
 \item SVtype (character): type of SV, encoded as: DEL (deletion-like; +/-), DUP (duplication-like; -/+),
 h2hINV (head-to-head inversion; +/+), and t2tINV (tail-to-tail inversion; -/-).
+\item strand1
+\item strand2
 \end{itemize}
 Chromosomes are expected to be in Ensembl chromosome notation, i.e. NOT contain the prefix "chr".\\
 <<echo=TRUE,warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T>>=
@@ -350,7 +352,7 @@ The CN data is  loaded into an object of class "CNVsegs", using the function {\i
 CN_data <- CNVsegs(chrom=as.character(SCNA_DO17373$chromosome),
                      start=SCNA_DO17373$start,
                      end=SCNA_DO17373$end,
-                     log2copyratio=SCNA_DO17373$total_cn)
+                     total_cn=SCNA_DO17373$total_cn)
 @
 
 
@@ -361,23 +363,29 @@ This function runs the code to detect clusters of interleaved SVs,
 and subsequently evaluates each candidate chromothripsis region for
 the statistical criteria described above.
 %library(GenomicRanges)
-<<echo=TRUE,results='hide',warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T>>=
+<<echo=TRUE,warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T>>=
+library(shatterSeek)
+start_time <- Sys.time()
 chromothripsis <- shatterseek(SV.sample=SV_data, seg.sample=CN_data)
-print(chromothripsis@chromSummary)
+end_time <- Sys.time()
+print(paste0("Running time (s): ",end_time - start_time))
+
+print(head(chromothripsis@chromSummary))
 @
 The 'clusterSize' column indicates the size of the largest cluster of interleaved SVs detected per chromosome.
 
 <<echo=TRUE,results='hide',warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T>>=
-chromothripsis@chromSummary = statistical_criteria(chromothripsis)
+#chromothripsis@chromSummary 
+detach("package:shatterSeek", unload=TRUE)
+library(shatterSeek)
+#o = statistical_criteria(chromothripsis)
 @
-%## la function criteria es buena en el mac
-%la funciton dle plot no va por al guna razon..
+
 
 The function {\it shatterseek} returns a list containing two objects:
 
 \begin{itemize}
 \item sd
-
 
 
 %%% SUMMARY
@@ -399,13 +407,30 @@ Each row corresponds to a chromosome (i.e., 1-22, and X), whereas the columns co
 
 \section{Visualization of chromothripsis regions}
 
-<<echo=TRUE,warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T,fig.align='center',fig.cap="CV",out.width='8cm'>>=
-library(ggplot2)
-source("shatterSeek_0.4/R/plot_function.R")
-plots = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = 22)
-grid.arrange(plots[[1]],plots[[2]],plots[[3]],plots[[4]],ncol=1)
+<<echo=TRUE,warning=FALSE,message=FALSE,eval=TRUE,tidy=TRUE,render=T,fig.align='center',fig.cap="Chromothripsis regions detected in patient DO17373.",out.width='24cm'>>=
+library(gridExtra)
+plots_chr3 = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = "3")
+#grid.arrange(plots_chr3[[1]],plots_chr3[[2]],plots_chr3[[3]],plots_chr3[[4]],nrow=4,ncol=1,heights=c(0.2,.4,.55,.25))
+plot_chr3 = arrangeGrob(plots_chr3[[1]],plots_chr3[[2]],plots_chr3[[3]],plots_chr3[[4]],
+                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.25))
+
+plots_chr2 = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = "2")
+plot_chr2 = arrangeGrob(plots_chr2[[1]],plots_chr2[[2]],plots_chr2[[3]],plots_chr2[[4]],
+                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.25))
+
+plots_chr21 = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = "21")
+plot_chr21 = arrangeGrob(plots_chr21[[1]],plots_chr21[[2]],plots_chr21[[3]],plots_chr21[[4]],
+                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.25))
+
+plots_chrX = plot_chromothripsis(shatterSeek_output = chromothripsis,chr = "X")
+plot_chrX = arrangeGrob(plots_chrX[[1]],plots_chrX[[2]],plots_chrX[[3]],plots_chrX[[4]],
+                        nrow=4,ncol=1,heights=c(0.2,.4,.4,.25))
+
+grid.arrange(plot_chr2,plot_chr3,plot_chr21,plot_chrX,ncol=2,nrow=2,heights=c(.5,.5),widths=c(.5,.5))
 @
 
+
+arrangeGrob(plots[[1]],plots[[2]],plots[[3]],plots[[4]],nrow=4,ncol=1,heights=c(0.2,.4,.55,.25))
 
 \section{Visualization of multichromosomal chromothripsis events}
 

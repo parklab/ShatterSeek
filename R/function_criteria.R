@@ -13,7 +13,7 @@ statistical_criteria = function(input){
     summary$clusterSize_including_TRA <- rep(0,23)
     summary$number_SVs_sample <- rep(0,23)
     summary$number_CNV_segments <- rep(NA,23)
-    summary$fragment_joints <- rep(NA,23)
+    summary$pval_fragment_joins <- rep(NA,23)
     summary$chr_breakpoint_enrichment <- rep(NA,23)
     summary$pval_exp_chr <- rep(NA,23)
     summary$pval_exp_cluster <- rep(NA,23)
@@ -32,7 +32,7 @@ statistical_criteria = function(input){
                                 number_t2tINV=rep(0,l_candidate_chrs),
                                 number_TRA=rep(0,l_candidate_chrs),
                                 number_DUP=rep(0,l_candidate_chrs),
-                                fragment_joints=rep(NA,l_candidate_chrs))
+                                pval_fragment_joins=rep(NA,l_candidate_chrs))
 
     other_chroms=rep("",length(candidate_chrs))
     other_chroms_coords_all = rep(" ",length(candidate_chrs))
@@ -171,7 +171,7 @@ statistical_criteria = function(input){
                     names(inter)[1:4] = c("chrom1","pos1","chrom2","pos2")
                     window = rbind(window,inter[which(inter$chrom1 %in% selection_chrs | inter$chrom2 %in% selection_chrs),])
                     #---------------------------------------------
-                    # Randomness of joints
+                    # Randomness of joins
                     #---------------------------------------------
                     # check multinomial distribution for SV types
                     # add SV types for translocations
@@ -196,7 +196,7 @@ statistical_criteria = function(input){
                     other_chroms[idxx] = as.character(paste(as.vector(selection_chrs),collapse="_"))
                     other_chroms_coords_all[idxx] = as.character(paste(as.vector(selection_chr_coords),collapse=""))
                     signif <- chisq.test(obs, p=rep(1/4,4))$p.val
-                    summary_inter$fragment_joints[idxx] <- signif 
+                    summary_inter$pval_fragment_joins[idxx] <- signif 
                 }
             }
         }
@@ -274,7 +274,7 @@ statistical_criteria = function(input){
             summary$chr_breakpoint_enrichment[index_chromosome] = NA
         } 
         #--------------------------------------------------
-        # Randomness of DNA fragment joints
+        # Randomness of DNA fragment joins
         #--------------------------------------------------
         # check multinomial distribution for SV types
         cand_clust_size <- input@chromSummary$clusterSize[ input@chromSummary$chrom == cand]
@@ -313,8 +313,8 @@ statistical_criteria = function(input){
 
         if(nrow(SVsnow) != 0){
             signif <- chisq.test(obs2, p=rep(1/4,4))$p.val
-            summary$fragment_joints[index_chromosome] <- signif} else{
-                summary$fragment_joints[index_chromosome] <- NA
+            summary$pval_fragment_joins[index_chromosome] <- signif} else{
+                summary$pval_fragment_joins[index_chromosome] <- NA
         }
     }
 

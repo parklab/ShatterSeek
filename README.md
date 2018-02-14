@@ -23,6 +23,7 @@ using ~2,600 whole-genome sequencing data sets from The Pan-Cancer Analysis of W
 can be found in the following publication:
 
 **Comprehensive analysis of chromothripsis in 2,658 human cancers using whole-genome sequencing**
+
 Cortes-Ciriano et al. 2018
 
 All the chromothripsis calls reported in that publication can be visualized at: http://compbio.med.harvard.edu/chromothripsis/
@@ -30,6 +31,7 @@ All the chromothripsis calls reported in that publication can be visualized at: 
 A detailed tutorial illustrating how to use ShatterSeek is provided in ./inst/tutorial/tutorial.pdf
 
 ShatterSeek is free for academic use **only**.
+
 For non-academic use, please email Dr. Tatiana Demidova-Rice at Harvard University Office of Technology Development (tatiana\_demidova-rice@harvard.edu)
 
 # Prerequisites
@@ -40,6 +42,7 @@ methods, BiocGenerics, graph, S4Vectors, GenomicRanges, IRanges, MASS, ggplot2, 
 
 # Installation
 `$ git clone https://github.com/parklab/ShatterSeek.git`
+
 `$ R CMD INSTALL ShatterSeek-master`
 
 Alternatively you can install ShatterSeek directly from R using devtools:
@@ -53,6 +56,8 @@ Please see the package tutorial (especially section "How to use Shatterkeek")
 
 # Contact
 If you have any questions or suggestions please contact us:
+
 Isidro Cortes Ciriano: isidrolauscher at gmail.com or isidro_cortesciriano at hms.harvard.edu
+
 Peter J Park: peter_park at hms.harvard.edu
 

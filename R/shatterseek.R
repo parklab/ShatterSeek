@@ -1,3 +1,14 @@
+#' Class to store SV data
+#' @param chrom1 (character): chromosome for the first breakpoint
+#' @param pos1 (character): position for the first breakpoint
+#' @param chrom2 (character): chromosome for the second breakpoint
+#' @param pos2 (character): position for the second breakpoint
+#' @param SVtype (character): type of SV, encoded as: DEL (deletion-like; +/-), DUP (duplication-like; -/+), h2hINV (head-to-head inversion; +/+), and t2tINV (tail-to-tail inversion; -/-).
+#' @param strand1 (e.g. + for DEL)
+#' @param strand2 (e.g. - for DEL)
+#' @return an instance of the class 'SVs' that contains SV data. Required format by the function shatterseek
+#' @export
+
 SVs <- setClass("SVs",
 				representation(
 							   chrom1="character",
@@ -6,8 +17,8 @@ SVs <- setClass("SVs",
 							   pos2 = "numeric",
 							   SVtype = "character",
 							   strand1 = "character",
-							   strand2 = "character",
-							   numSV = "numeric"
+							   strand2 = "character"
+							   #numSV = "numeric"
 							   ) 
 				)
 
@@ -28,7 +39,7 @@ setMethod("initialize", "SVs", function(.Object, ...) {
 				  .Object@pos2[ind] = .Object@pos1[ind]
 				  .Object@pos1[ind] = tmp1
 			  }
-			  .Object@numSV = length(.Object@chrom1)
+			  #.Object@numSV = length(.Object@chrom1)
 			  ind.match.sv1 = match(.Object@chrom1,chromNames)
 			  ind.match.sv2 = match(.Object@chrom2,chromNames)	
 
@@ -39,9 +50,9 @@ setMethod("initialize", "SVs", function(.Object, ...) {
 			  .Object
 				})
 
-setMethod("show","SVs",function(object){
-			  print(paste("SVs with", object@numSV, "structural variations"))
-				})
+#setMethod("show","SVs",function(object){
+#			  print(paste("SVs with", object@numSV, "structural variations"))
+#				})
 
 
 setAs("SVs","data.frame",function(from, to){
@@ -56,6 +67,14 @@ setAs("SVs","data.frame",function(from, to){
 
 				})
 
+#' Class to store CNV data
+#'
+#' @param chrom (character): chromosome (also in Ensembl notation)
+#' @param start (numeric): start position for the CN segment
+#' @param end (numeric): end position for the CN segment
+#' @param CN (numeric): integer total copy number (e.g. 2 for unaltered chromosomal regions)
+#' @return an instance of the class 'CNVsegs' that contains CNV data. Required format by the function shatterseek
+#' @export
 CNVsegs = setClass("CNVsegs",
 				   representation(
 								  chrom="character",
@@ -194,8 +213,12 @@ cluster.SV = function(SV.sample,min.Size=1,chromNames){
 	return(rt.value)
 }
 
-
-
+#' Main ShatterSeek function
+#' Identified cluster of interleaved SVs and calculates statistical metrics for each chromosome (chromosomes 1-22 and X)
+#' @param SV.sample an instance of class SVs
+#' @param seg.sample an instance of class CNVsegs
+#' @param min.Size minimum number of inleaved SVs required to report a cluster. Default is 1
+#' @export
 shatterseek = function(SV.sample,seg.sample,min.Size=1){
 
 	cat("Running..\n\n\n")

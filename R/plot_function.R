@@ -1,3 +1,19 @@
+#' Plot chromothripsis regions
+#' This function serves to plot chromothripsis regions
+#' in order to facilitate the revision of 
+#' candidate chromothripsis regions
+#' 
+#' @param ShatterSeek_output the output of the function shatterseek
+#' @param chr chromosome for which the plot will be generated (note that only the region where there is a cluster of interleaved SVs will be shown)
+#' @param sample_name name of the sample to be shown in the table
+#' @param DEL_color colour to show the deletion-like SVs
+#' @param DUP_color colour to show the duplication-like SVs
+#' @param t2tINV_color colour to show the t2tINV SVs
+#' @param h2hINV_color colour to show the h2hINV SVs
+#' @param arc_size size of the arcs representing intrachromosomal SVs
+#' @return a list containing ggplot objects (chromosome ideogram, SVs, CN profile, and table with information about the region)
+#' 
+#' @export
 plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name="",
 								DEL_color='darkorange1',DUP_color='blue1',
 								t2tINV_color="forestgreen",h2hINV_color="black",
@@ -24,14 +40,14 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 
 	cand = gsub("chr","",chr)
 	chr=paste("chr",cand,sep="")
-	summary = shatterSeek_output@chromSummary
-	candidate_chrs <- shatterSeek_output@chromSummary$chrom 
-	cluster_sizes <- sapply(shatterSeek_output@detail$connComp,length)
+	summary = ShatterSeek_output@chromSummary
+	candidate_chrs <- ShatterSeek_output@chromSummary$chrom 
+	cluster_sizes <- sapply(ShatterSeek_output@detail$connComp,length)
 	# get the SVs for the cluster of SVs in this chromosome
-	cand_clust_size <- shatterSeek_output@chromSummary$clusterSize[ shatterSeek_output@chromSummary$chrom == cand]
+	cand_clust_size <- ShatterSeek_output@chromSummary$clusterSize[ ShatterSeek_output@chromSummary$chrom == cand]
 	idx = which(cluster_sizes == cand_clust_size) 
-	SVsnow <- shatterSeek_output@detail$SV##[ as.numeric(unlist(shatterSeek_output@detail$connComp[idx])) ,]
-	CNVsnow <- shatterSeek_output@detail$CNV  
+	SVsnow <- ShatterSeek_output@detail$SV##[ as.numeric(unlist(ShatterSeek_output@detail$connComp[idx])) ,]
+	CNVsnow <- ShatterSeek_output@detail$CNV  
 	SVsnow <- unique(SVsnow[SVsnow$chrom1 == cand, ]) # remove if there are more
 	CNVsnow <- CNVsnow[CNVsnow$chrom == cand, ] # remove if there are more
 
@@ -67,7 +83,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	#-------------------------------------------------------------------------------------------------------
 	# Interchromosomal SVs
 	#-------------------------------------------------------------------------------------------------------
-	inter <- shatterSeek_output@detail$SVinter   
+	inter <- ShatterSeek_output@detail$SVinter   
 	inter <- inter[which(inter$chrom1 == cand | inter$chrom2 == cand), ] 
 
 	if (nrow(inter)>0){

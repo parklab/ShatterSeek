@@ -1,62 +1,59 @@
 \name{shatterseek}
-
 \alias{shatterseek}
-
-
 
 \title{The main function of the package shatterSeek}
 
 \description{
-	Detect chromothripsis with structural variations and copy number variations
-	}
+	Detect chromothripsis events from structural variations and copy number variation data
+}
 
 \usage{ 
-        shatterseek(SV.sample,seg.sample,cores=20,B=5000)
-        } 
+shatterseek(SV.sample,seg.sample)
+} 
 \arguments{
 	\item{SV.sample}{
-		A \link{SVs} object that stores all the structural variations of the sample; ShatterSeek only considers structural variations with two breakpoints on the same chromosome. Therefore, inter-chromosomal structural variations will be ignored.
-		}
-	\item{seg.sample}{
-		A \link{CNVsegs} object that contains the copy number segmentation results of the sample.
-		}
-	\item{cores}{
-		A positive integer. The number of cores to use for parallel computing.
-		}
-	\item{B}{
-		A positive integer. The number of permutations for assigning the p-values.
-		}
+		A \link{SVs} object that stores all the structural variations of the sample.
+		To detect clusters of interleaved SVs, ShatterSeek only considers structural variations with two breakpoints on the same chromosome.
+		Inter-chromosomal structural variations are used in the subsequent steps to detect multichromosomal events and to evaluate the set of statistical criteria described in the tutorial.
 	}
+	\item{seg.sample}{
+		A \link{CNVsegs} object that contains the copy number segmentation results for the sample.
+	}
+}
 
 \details{
-	
-	}
+
+}
 
 
 \value{
 	A \link{chromoth} object. 
-	}
+}
 
-\seealso{ \link{plot.chromoth}
-	}
+\seealso{ \link{plot_chromothripsis}
+}
 
 \references{
-	The Cancer Genome Atlas Research Network (2015) Comprehensive Molecular Characterization of Cutaneous Melanoma. Cell, 161(7):1681-96.
-	}
+	Comprehensive analysis of chromothripsis in 2,658 human cancers using whole-genome sequencing. Cortes-Ciriano et al. 2018
+}
 
 \examples{
-	set.seed(1234)
-	data(SKCM) ### load the SKCM data
-	s = "TCGA-D3-A2JC-06A-11D-A18Z" ### look at this sample
+data(DO17373)
+SV_data <- SVs(chrom1=as.character(SV_DO17373$chrom1), 
+			   pos1=as.numeric(SV_DO17373$start1),
+			   chrom2=as.character(SV_DO17373$chrom2), 
+			   pos2=as.numeric(SV_DO17373$end2),
+			   SVtype=as.character(SV_DO17373$svclass), 
+			   strand1=as.character(SV_DO17373$strand1),
+			   strand2=as.character(SV_DO17373$strand2))
 
-	SV.sample = SV.SKCM[SV.SKCM$sample.name==s,]
-	segSample = seg.SKCM[seg.SKCM$sample.name==s,]
-	segSample = segSample[segSample$chr!="Y",]
-	SV.sample = SVs(chrom1=SV.sample$chrom1,pos1=SV.sample$pos1,chrom2=SV.sample$chrom2,pos2=SV.sample$pos2) ### structrual variations calls
-	segSample = CNVsegs(chrom=segSample$chr,start=segSample$start,end=segSample$end,log2copyratio=segSample$segmean) ### segmentation 
-	chromthripsis = shatterseek(SV.sample,segSample,B=1000) ##with both SV and CNV data
-	chromthripsis = shatterseek(SV.sample,B=1000) ##with only SV data
-	plot.chromoth(chromthripsis,chrom="15")
-	}
+CN_data <- CNVsegs(chrom=as.character(SCNA_DO17373$chromosome),
+				   start=SCNA_DO17373$start,
+				   end=SCNA_DO17373$end,
+				   total_cn=SCNA_DO17373$total_cn)
 
-\author{Ruibin Xi}
+chromothripsis <- shatterseek(SV.sample=SV_data, seg.sample=CN_data)
+plots_chr3 = plot_chromothripsis(ShatterSeek_output = chromothripsis,chr = "3", sample_name="DO17373")
+
+}
+

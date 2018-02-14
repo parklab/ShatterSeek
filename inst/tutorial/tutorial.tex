@@ -471,7 +471,7 @@ the statistical criteria described above.
 \hlkwd{print}\hlstd{(}\hlkwd{paste0}\hlstd{(}\hlstr{"Running time (s): "}\hlstd{,}\hlkwd{round}\hlstd{(end_time} \hlopt{-} \hlstd{start_time,}\hlkwc{digits}\hlstd{=}\hlnum{2}\hlstd{)))}
 \end{alltt}
 \begin{verbatim}
-## [1] "Running time (s): 17.25"
+## [1] "Running time (s): 17.73"
 \end{verbatim}
 \begin{alltt}
 \hlkwd{print}\hlstd{(}\hlkwd{head}\hlstd{(chromothripsis}\hlopt{@}\hlkwc{chromSummary}\hlstd{))}
@@ -500,8 +500,8 @@ the statistical criteria described above.
 ## 6                  NA                  NA              3.277719e-14
 ##   pval_exp_chr pval_exp_cluster
 ## 1           NA               NA
-## 2 1.348917e-08     0.000000e+00
-## 3 0.000000e+00     1.436851e-12
+## 2 1.857513e-08     0.000000e+00
+## 3 0.000000e+00     1.154479e-09
 ## 4           NA               NA
 ## 5           NA               NA
 ## 6           NA               NA
@@ -645,76 +645,50 @@ and visualized using e.g. the function {\it plot\_grid} from the R package cowpl
 \begin{alltt}
 \hlkwd{library}\hlstd{(gridExtra)}
 \hlstd{plots_chr3} \hlkwb{=} \hlkwd{plot_chromothripsis}\hlstd{(}\hlkwc{ShatterSeek_output} \hlstd{= chromothripsis,}\hlkwc{chr} \hlstd{=} \hlstr{"3"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in plot\_chromothripsis(ShatterSeek\_output = chromothripsis, chr = "{}3"{}): unused argument (ShatterSeek\_output = chromothripsis)}}\begin{alltt}
 \hlstd{plot_chr3} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr3[[}\hlnum{1}\hlstd{]],}
                         \hlstd{plots_chr3[[}\hlnum{2}\hlstd{]],}
                         \hlstd{plots_chr3[[}\hlnum{3}\hlstd{]],}
                         \hlstd{plots_chr3[[}\hlnum{4}\hlstd{]],}
                         \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{))}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(plots\_chr3[[1]], plots\_chr3[[2]], plots\_chr3[[3]], : object 'plots\_chr3' not found}}\begin{alltt}
 \hlstd{plots_chr2} \hlkwb{=} \hlkwd{plot_chromothripsis}\hlstd{(}\hlkwc{ShatterSeek_output} \hlstd{= chromothripsis,}\hlkwc{chr} \hlstd{=} \hlstr{"2"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in plot\_chromothripsis(ShatterSeek\_output = chromothripsis, chr = "{}2"{}): unused argument (ShatterSeek\_output = chromothripsis)}}\begin{alltt}
 \hlstd{plot_chr2} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr2[[}\hlnum{1}\hlstd{]],}
                         \hlstd{plots_chr2[[}\hlnum{2}\hlstd{]],}
                         \hlstd{plots_chr2[[}\hlnum{3}\hlstd{]],}
                         \hlstd{plots_chr2[[}\hlnum{4}\hlstd{]],}
                          \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{))}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(plots\_chr2[[1]], plots\_chr2[[2]], plots\_chr2[[3]], : object 'plots\_chr2' not found}}\begin{alltt}
 \hlstd{plots_chr21} \hlkwb{=} \hlkwd{plot_chromothripsis}\hlstd{(}\hlkwc{ShatterSeek_output} \hlstd{= chromothripsis,}\hlkwc{chr} \hlstd{=} \hlstr{"21"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in plot\_chromothripsis(ShatterSeek\_output = chromothripsis, chr = "{}21"{}): unused argument (ShatterSeek\_output = chromothripsis)}}\begin{alltt}
 \hlstd{plot_chr21} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chr21[[}\hlnum{1}\hlstd{]],}
                          \hlstd{plots_chr21[[}\hlnum{2}\hlstd{]],}
                          \hlstd{plots_chr21[[}\hlnum{3}\hlstd{]],}
                          \hlstd{plots_chr21[[}\hlnum{4}\hlstd{]],}
                          \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{))}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(plots\_chr21[[1]], plots\_chr21[[2]], plots\_chr21[[3]], : object 'plots\_chr21' not found}}\begin{alltt}
 \hlstd{plots_chrX} \hlkwb{=} \hlkwd{plot_chromothripsis}\hlstd{(}\hlkwc{ShatterSeek_output} \hlstd{= chromothripsis,}\hlkwc{chr} \hlstd{=} \hlstr{"X"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in plot\_chromothripsis(ShatterSeek\_output = chromothripsis, chr = "{}X"{}): unused argument (ShatterSeek\_output = chromothripsis)}}\begin{alltt}
 \hlstd{plot_chrX} \hlkwb{=} \hlkwd{arrangeGrob}\hlstd{(plots_chrX[[}\hlnum{1}\hlstd{]],}
                         \hlstd{plots_chrX[[}\hlnum{2}\hlstd{]],}
                         \hlstd{plots_chrX[[}\hlnum{3}\hlstd{]],}
                         \hlstd{plots_chrX[[}\hlnum{4}\hlstd{]],}
                          \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,}\hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{heights}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.2}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{,}\hlnum{.4}\hlstd{))}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(plots\_chrX[[1]], plots\_chrX[[2]], plots\_chrX[[3]], : object 'plots\_chrX' not found}}\begin{alltt}
 \hlkwd{library}\hlstd{(cowplot)}
 \hlkwd{plot_grid}\hlstd{(plot_chr3,plot_chr2)}
 \end{alltt}
+\end{kframe}\begin{figure}
+
+{\centering \includegraphics[width=0.85\linewidth,height=0.55\textheight]{figure/unnamed-chunk-10-1} 
+
+}
+
+\caption[Chromothripsis regions detected in patient DO17373 in chromosomes 2 and 3]{Chromothripsis regions detected in patient DO17373 in chromosomes 2 and 3.}\label{fig:unnamed-chunk-10}
+\end{figure}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in plot\_grid(plot\_chr3, plot\_chr2): object 'plot\_chr3' not found}}\end{kframe}
 \end{knitrout}
 
 The plots can also be combined into a grid of e.g. four plots and saved to a file:
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(...): object 'plot\_chr3' not found}}\end{kframe}
-\end{knitrout}
 
 
 \section{Bibliography}

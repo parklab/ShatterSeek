@@ -13,3 +13,4 @@ License: GPL (>= 3)
 Repository: CRAN
 LazyData: no
 Packaged: 2017-05-25 13:39:14 UTC; Isidro
+RoxygenNote: 6.0.1

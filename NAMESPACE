@@ -18,13 +18,7 @@ import(grid)
 
 import(gridExtra)
 
-#import(ggrepel)
-
-import(plyr)
-
-
-
-export(shatterseek,SVs,CNVsegs,getSVs,getSegs, cluster.SV, statistical_criteria,peak.count, plot_chromothripsis)
+export(shatterseek,SVs,CNVsegs,plot_chromothripsis)
 
 exportClasses(
 	SVs,CNVsegs,chromoth

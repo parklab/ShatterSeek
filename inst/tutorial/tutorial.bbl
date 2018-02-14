@@ -1,0 +1,1820 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{none/global/}
+  \entry{Stephens2011}{article}{}
+    \name{author}{32}{}{%
+      {{hash=SPJ}{%
+         family={Stephens},
+         familyi={S\bibinitperiod},
+         given={Philip\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=GCD}{%
+         family={Greenman},
+         familyi={G\bibinitperiod},
+         given={Chris\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=FB}{%
+         family={Fu},
+         familyi={F\bibinitperiod},
+         given={Beiyuan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=YF}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Fengtang},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BGR}{%
+         family={Bignell},
+         familyi={B\bibinitperiod},
+         given={Graham\bibnamedelima R},
+         giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=MLJ}{%
+         family={Mudie},
+         familyi={M\bibinitperiod},
+         given={Laura\bibnamedelima J},
+         giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=PED}{%
+         family={Pleasance},
+         familyi={P\bibinitperiod},
+         given={Erin\bibnamedelima D},
+         giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=LKW}{%
+         family={Lau},
+         familyi={L\bibinitperiod},
+         given={King\bibnamedelima Wai},
+         giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Beare},
+         familyi={B\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SLA}{%
+         family={Stebbings},
+         familyi={S\bibinitperiod},
+         given={Lucy\bibnamedelima A},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={McLaren},
+         familyi={M\bibinitperiod},
+         given={Stuart},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LML}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Meng-Lay},
+         giveni={M\bibinitperiod-L\bibinitperiod},
+      }}%
+      {{hash=MDJ}{%
+         family={McBride},
+         familyi={M\bibinitperiod},
+         given={David\bibnamedelima J},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=VI}{%
+         family={Varela},
+         familyi={V\bibinitperiod},
+         given={Ignacio},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=NZS}{%
+         family={Nik-Zainal},
+         familyi={N\bibinitperiod-Z\bibinitperiod},
+         given={Serena},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Leroy},
+         familyi={L\bibinitperiod},
+         given={Catherine},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=JM}{%
+         family={Jia},
+         familyi={J\bibinitperiod},
+         given={Mingming},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Menzies},
+         familyi={M\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BAP}{%
+         family={Butler},
+         familyi={B\bibinitperiod},
+         given={Adam\bibnamedelima P},
+         giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=TJW}{%
+         family={Teague},
+         familyi={T\bibinitperiod},
+         given={Jon\bibnamedelima W},
+         giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=QMA}{%
+         family={Quail},
+         familyi={Q\bibinitperiod},
+         given={Michael\bibnamedelima A},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Burton},
+         familyi={B\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Swerdlow},
+         familyi={S\bibinitperiod},
+         given={Harold},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CNP}{%
+         family={Carter},
+         familyi={C\bibinitperiod},
+         given={Nigel\bibnamedelima P},
+         giveni={N\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=MLA}{%
+         family={Morsberger},
+         familyi={M\bibinitperiod},
+         given={Laura\bibnamedelima A},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=IDC}{%
+         family={Iacobuzio-Donahue},
+         familyi={I\bibinitperiod-D\bibinitperiod},
+         given={Christine},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=FGA}{%
+         family={Follows},
+         familyi={F\bibinitperiod},
+         given={George\bibnamedelima A},
+         giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=GAR}{%
+         family={Green},
+         familyi={G\bibinitperiod},
+         given={Anthony\bibnamedelima R},
+         giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=FAM}{%
+         family={Flanagan},
+         familyi={F\bibinitperiod},
+         given={Adrienne\bibnamedelima M},
+         giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=SMR}{%
+         family={Stratton},
+         familyi={S\bibinitperiod},
+         given={Michael\bibnamedelima R},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=FPA}{%
+         family={Futreal},
+         familyi={F\bibinitperiod},
+         given={P\bibnamedelima Andrew},
+         giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=CPJ}{%
+         family={Campbell},
+         familyi={C\bibinitperiod},
+         given={Peter\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SPJGCDFB+1}
+  \strng{fullhash}{SPJGCDFBYFBGRMLJPEDLKWBDSLAMSLMLMDJVINZSLCJMMABAPTJWQMABJSHCNPMLAIDCFGAGARFAMSMRFPACPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Cancer is driven by somatically acquired point mutations and chromosomal
+  rearrangements, conventionally thought to accumulate gradually over time.
+  Using next-generation sequencing, we characterize a phenomenon, which we term
+  chromothripsis, whereby tens to hundreds of genomic rearrangements occur in a
+  one-off cellular crisis. Rearrangements involving one or a few chromosomes
+  crisscross back and forth across involved regions, generating frequent
+  oscillations between two copy number states. These genomic hallmarks are
+  highly improbable if rearrangements accumulate over time and instead imply
+  that nearly all occur during a single cellular catastrophe. The stamp of
+  chromothripsis can be seen in at least 2{\%}-3{\%} of all cancers, across
+  many subtypes, and is present in ∼25{\%} of bone cancers. We find that one,
+  or indeed more than one, cancer-causing lesion can emerge out of the genomic
+  crisis. This phenomenon has important implications for the origins of genomic
+  remodeling and temporal emergence of cancer.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.cell.2010.11.055
+    \endverb
+    \field{issn}{1097-4172}
+    \field{number}{1}
+    \field{pages}{27\bibrangedash 40}
+    \field{title}{{Massive genomic rearrangement acquired in a single
+  catastrophic event during cancer development.}}
+    \verb{url}
+    \verb http://www.ncbi.nlm.nih.gov/pubmed/21215367 http://www.pubmedcentral.
+    \verb nih.gov/articlerender.fcgi?artid=PMC3065307
+    \endverb
+    \field{volume}{144}
+    \field{journaltitle}{Cell}
+    \field{year}{2011}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Kim2013}{article}{}
+    \name{author}{6}{}{%
+      {{hash=KTM}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Tae-Min},
+         giveni={T\bibinitperiod-M\bibinitperiod},
+      }}%
+      {{hash=XR}{%
+         family={Xi},
+         familyi={X\bibinitperiod},
+         given={Ruibin},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LLJ}{%
+         family={Luquette},
+         familyi={L\bibinitperiod},
+         given={Lovelace\bibnamedelima J},
+         giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=PRW}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={Richard\bibnamedelima W},
+         giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=JMD}{%
+         family={Johnson},
+         familyi={J\bibinitperiod},
+         given={Mark\bibnamedelima D},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=PPJ}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={Peter\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cold Spring Harbor Laboratory Press}%
+    }
+    \strng{namehash}{KTMXRLLJ+1}
+    \strng{fullhash}{KTMXRLLJPRWJMDPPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A large database of copy number profiles from cancer genomes can facilitate
+  the identification of recurrent chromosomal alterations that often contain
+  key cancer-related genes. It can also be used to explore low-prevalence
+  genomic events such as chromothripsis. In this study, we report an analysis
+  of 8227 human cancer copy number profiles obtained from 107 array comparative
+  genomic hybridization (CGH) studies. Our analysis reveals similarity of
+  chromosomal arm-level alterations among developmentally related tumor types
+  as well as a number of co-occurring pairs of arm-level alterations. Recurrent
+  ("pan-lineage") focal alterations identified across diverse tumor types show
+  an enrichment of known cancer-related genes and genes with relevant functions
+  in cancer-associated phenotypes (e.g., kinase and cell cycle). Tumor
+  type-specific ("lineage-restricted") alterations and their enriched
+  functional categories were also identified. Furthermore, we developed an
+  algorithm for detecting regions in which the copy number oscillates rapidly
+  between fixed levels, indicative of chromothripsis. We observed these massive
+  genomic rearrangements in 1{\%}-2{\%} of the samples with variable tumor
+  type-specific incidence rates. Taken together, our comprehensive view of copy
+  number alterations provides a framework for understanding the functional
+  significance of various genomic alterations in cancer genomes.%
+    }
+    \verb{doi}
+    \verb 10.1101/gr.140301.112
+    \endverb
+    \field{issn}{1549-5469}
+    \field{number}{2}
+    \field{pages}{217\bibrangedash 27}
+    \field{title}{{Functional genomic analysis of chromosomal aberrations in a
+  compendium of 8000 cancer genomes.}}
+    \verb{url}
+    \verb http://www.ncbi.nlm.nih.gov/pubmed/23132910 http://www.pubmedcentral.
+    \verb nih.gov/articlerender.fcgi?artid=PMC3561863
+    \endverb
+    \field{volume}{23}
+    \field{journaltitle}{Genome research}
+    \field{year}{2013}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Cai2014}{article}{}
+    \name{author}{6}{}{%
+      {{hash=CH}{%
+         family={Cai},
+         familyi={C\bibinitperiod},
+         given={Haoyang},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=KN}{%
+         family={Kumar},
+         familyi={K\bibinitperiod},
+         given={Nitin},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=BHC}{%
+         family={Bagheri},
+         familyi={B\bibinitperiod},
+         given={Homayoun\bibnamedelima C},
+         giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=vMC}{%
+         prefix={von},
+         prefixi={v\bibinitperiod},
+         family={Mering},
+         familyi={M\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=RMD}{%
+         family={Robinson},
+         familyi={R\bibinitperiod},
+         given={Mark\bibnamedelima D},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Baudis},
+         familyi={B\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {BioMed Central}%
+    }
+    \keyw{Animal Genetics and Genomics,Life Sciences,Microarrays,Microbial
+  Genetics and Genomics,Plant Genetics {\&} Genomics,Proteomics,general}
+    \strng{namehash}{CHKNBHC+1}
+    \strng{fullhash}{CHKNBHCMCvRMDBM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Chromothripsis is a recently discovered phenomenon of genomic
+  rearrangement, possibly arising during a single genome-shattering event. This
+  could provide an alternative paradigm in cancer development, replacing the
+  gradual accumulation of genomic changes with a “one-off” catastrophic
+  event. However, the term has been used with varying operational definitions,
+  with the minimal consensus being a large number of locally clustered copy
+  number aberrations. The mechanisms underlying these chromothripsis-like
+  patterns (CTLP) and their specific impact on tumorigenesis are still poorly
+  understood. Here, we identified CTLP in 918 cancer samples, from a dataset of
+  more than 22,000 oncogenomic arrays covering 132 cancer types. Fragmentation
+  hotspots were found to be located on chromosome 8, 11, 12 and 17. Among the
+  various cancer types, soft-tissue tumors exhibited particularly high CTLP
+  frequencies. Genomic context analysis revealed that CTLP rearrangements
+  frequently occurred in genomes that additionally harbored multiple copy
+  number aberrations (CNAs). An investigation into the affected chromosomal
+  regions showed a large proportion of arm-level pulverization and telomere
+  related events, which would be compatible to a number of underlying
+  mechanisms. We also report evidence that these genomic events may be
+  correlated with patient age, stage and survival rate. Through a large-scale
+  analysis of oncogenomic array data sets, this study characterized features
+  associated with genomic aberrations patterns, compatible to the spectrum of
+  “chromothripsis”-definitions as previously used. While quantifying
+  clustered genomic copy number aberrations in cancer samples, our data
+  indicates an underlying biological heterogeneity behind these
+  chromothripsis-like patterns, beyond a well defined “chromthripsis”
+  phenomenon.%
+    }
+    \verb{doi}
+    \verb 10.1186/1471-2164-15-82
+    \endverb
+    \field{issn}{1471-2164}
+    \field{number}{1}
+    \field{pages}{82}
+    \field{title}{{Chromothripsis-like patterns are recurring but
+  heterogeneously distributed features in a survey of 22,347 cancer genome
+  screens}}
+    \verb{url}
+    \verb http://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-15-82
+    \endverb
+    \field{volume}{15}
+    \field{journaltitle}{BMC Genomics}
+    \field{annotation}{%
+    From Duplicate 1 (Chromothripsis-like patterns are recurring but
+  heterogeneously distributed features in a survey of 22,347 cancer genome
+  screens - Cai, Haoyang; Kumar, Nitin; Bagheri, Homayoun C; von Mering,
+  Christian; Robinson, Mark D; Baudis, Michael) NULL%
+    }
+    \field{year}{2014}
+  \endentry
+
+  \entry{Notta2016}{article}{}
+    \name{author}{46}{}{%
+      {{hash=NF}{%
+         family={Notta},
+         familyi={N\bibinitperiod},
+         given={Faiyaz},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=CSYM}{%
+         family={Chan-Seng-Yue},
+         familyi={C\bibinitperiod-S\bibinitperiod-Y\bibinitperiod},
+         given={Michelle},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Lemire},
+         familyi={L\bibinitperiod},
+         given={Mathieu},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Yilong},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WGW}{%
+         family={Wilson},
+         familyi={W\bibinitperiod},
+         given={Gavin\bibnamedelima W.},
+         giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=CAA}{%
+         family={Connor},
+         familyi={C\bibinitperiod},
+         given={Ashton\bibnamedelima A.},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=DRE}{%
+         family={Denroche},
+         familyi={D\bibinitperiod},
+         given={Robert\bibnamedelima E.},
+         giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=LSB}{%
+         family={Liang},
+         familyi={L\bibinitperiod},
+         given={Sheng-Ben},
+         giveni={S\bibinitperiod-B\bibinitperiod},
+      }}%
+      {{hash=BAMK}{%
+         family={Brown},
+         familyi={B\bibinitperiod},
+         given={Andrew M.\bibnamedelima K.},
+         giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  K\bibinitperiod},
+      }}%
+      {{hash=KJC}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Jaeseung\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Tao},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SJT}{%
+         family={Simpson},
+         familyi={S\bibinitperiod},
+         given={Jared\bibnamedelima T.},
+         giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Beck},
+         familyi={B\bibinitperiod},
+         given={Timothy},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Borgida},
+         familyi={B\bibinitperiod},
+         given={Ayelet},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BN}{%
+         family={Buchner},
+         familyi={B\bibinitperiod},
+         given={Nicholas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Chadwick},
+         familyi={C\bibinitperiod},
+         given={Dianne},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HBS}{%
+         family={Hafezi-Bakhtiari},
+         familyi={H\bibinitperiod-B\bibinitperiod},
+         given={Sara},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DJE}{%
+         family={Dick},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima E.},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=HL}{%
+         family={Heisler},
+         familyi={H\bibinitperiod},
+         given={Lawrence},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=HMA}{%
+         family={Hollingsworth},
+         familyi={H\bibinitperiod},
+         given={Michael\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=IE}{%
+         family={Ibrahimov},
+         familyi={I\bibinitperiod},
+         given={Emin},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=JGH}{%
+         family={Jang},
+         familyi={J\bibinitperiod},
+         given={Gun\bibnamedelima Ho},
+         giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=JJ}{%
+         family={Johns},
+         familyi={J\bibinitperiod},
+         given={Jeremy},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JLGT}{%
+         family={Jorgensen},
+         familyi={J\bibinitperiod},
+         given={Lars G.\bibnamedelima T.},
+         giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim
+  T\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Law},
+         familyi={L\bibinitperiod},
+         given={Calvin},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LO}{%
+         family={Ludkovski},
+         familyi={L\bibinitperiod},
+         given={Olga},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=LI}{%
+         family={Lungu},
+         familyi={L\bibinitperiod},
+         given={Ilinca},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=NK}{%
+         family={Ng},
+         familyi={N\bibinitperiod},
+         given={Karen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Pasternack},
+         familyi={P\bibinitperiod},
+         given={Danielle},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PGM}{%
+         family={Petersen},
+         familyi={P\bibinitperiod},
+         given={Gloria\bibnamedelima M.},
+         giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=SLI}{%
+         family={Shlush},
+         familyi={S\bibinitperiod},
+         given={Liran\bibnamedelima I.},
+         giveni={L\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=TL}{%
+         family={Timms},
+         familyi={T\bibinitperiod},
+         given={Lee},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=TMS}{%
+         family={Tsao},
+         familyi={T\bibinitperiod},
+         given={Ming-Sound},
+         giveni={M\bibinitperiod-S\bibinitperiod},
+      }}%
+      {{hash=WJM}{%
+         family={Wilson},
+         familyi={W\bibinitperiod},
+         given={Julie\bibnamedelima M.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=YCK}{%
+         family={Yung},
+         familyi={Y\bibinitperiod},
+         given={Christina\bibnamedelima K.},
+         giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=ZG}{%
+         family={Zogopoulos},
+         familyi={Z\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=BJMS}{%
+         family={Bartlett},
+         familyi={B\bibinitperiod},
+         given={John M.\bibnamedelima S.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  S\bibinitperiod},
+      }}%
+      {{hash=ALB}{%
+         family={Alexandrov},
+         familyi={A\bibinitperiod},
+         given={Ludmil\bibnamedelima B.},
+         giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=RFX}{%
+         family={Real},
+         familyi={R\bibinitperiod},
+         given={Francisco\bibnamedelima X.},
+         giveni={F\bibinitperiod\bibinitdelim X\bibinitperiod},
+      }}%
+      {{hash=CSP}{%
+         family={Cleary},
+         familyi={C\bibinitperiod},
+         given={Sean\bibnamedelima P.},
+         giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=RMH}{%
+         family={Roehrl},
+         familyi={R\bibinitperiod},
+         given={Michael\bibnamedelima H.},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=MJD}{%
+         family={McPherson},
+         familyi={M\bibinitperiod},
+         given={John\bibnamedelima D.},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=SLD}{%
+         family={Stein},
+         familyi={S\bibinitperiod},
+         given={Lincoln\bibnamedelima D.},
+         giveni={L\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=HTJ}{%
+         family={Hudson},
+         familyi={H\bibinitperiod},
+         given={Thomas\bibnamedelima J.},
+         giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=CPJ}{%
+         family={Campbell},
+         familyi={C\bibinitperiod},
+         given={Peter\bibnamedelima J.},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Gallinger},
+         familyi={G\bibinitperiod},
+         given={Steven},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Nature Research}%
+    }
+    \strng{namehash}{NFCSYMLM+1}
+  \strng{fullhash}{NFCSYMLMLYWGWCAADRELSBBAMKKJCWTSJTBTBABNCDHBSDJEHLHMAIEJGHJJJLGTLCLOLINKPDPGMSLITLTMSWJMYCKZGBJMSALBRFXCSPRMHMJDSLDHTJCPJGS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/nature19823
+    \endverb
+    \field{issn}{0028-0836}
+    \field{number}{7625}
+    \field{pages}{378\bibrangedash 382}
+    \field{title}{{A renewed model of pancreatic cancer evolution based on
+  genomic rearrangement patterns}}
+    \verb{url}
+    \verb http://www.nature.com/doifinder/10.1038/nature19823
+    \endverb
+    \field{volume}{538}
+    \field{journaltitle}{Nature}
+    \field{annotation}{%
+    NULL%
+    }
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Li2014}{article}{}
+    \name{author}{34}{}{%
+      {{hash=LY}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Yilong},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Schwab},
+         familyi={S\bibinitperiod},
+         given={Claire},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=RSL}{%
+         family={Ryan},
+         familyi={R\bibinitperiod},
+         given={Sarra\bibnamedelima L},
+         giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=PE}{%
+         family={Papaemmanuil},
+         familyi={P\bibinitperiod},
+         given={Elli},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=RHM}{%
+         family={Robinson},
+         familyi={R\bibinitperiod},
+         given={Hazel\bibnamedelima M},
+         giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=JP}{%
+         family={Jacobs},
+         familyi={J\bibinitperiod},
+         given={Patricia},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MAV}{%
+         family={Moorman},
+         familyi={M\bibinitperiod},
+         given={Anthony\bibnamedelima V},
+         giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=DS}{%
+         family={Dyer},
+         familyi={D\bibinitperiod},
+         given={Sara},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Borrow},
+         familyi={B\bibinitperiod},
+         given={Julian},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Griffiths},
+         familyi={G\bibinitperiod},
+         given={Mike},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HNA}{%
+         family={Heerema},
+         familyi={H\bibinitperiod},
+         given={Nyla\bibnamedelima A},
+         giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=CAJ}{%
+         family={Carroll},
+         familyi={C\bibinitperiod},
+         given={Andrew\bibnamedelima J},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Talley},
+         familyi={T\bibinitperiod},
+         given={Polly},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=BN}{%
+         family={Bown},
+         familyi={B\bibinitperiod},
+         given={Nick},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=TN}{%
+         family={Telford},
+         familyi={T\bibinitperiod},
+         given={Nick},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RFM}{%
+         family={Ross},
+         familyi={R\bibinitperiod},
+         given={Fiona\bibnamedelima M},
+         giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=GL}{%
+         family={Gaunt},
+         familyi={G\bibinitperiod},
+         given={Lorraine},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MRJQ}{%
+         family={McNally},
+         familyi={M\bibinitperiod},
+         given={Richard J\bibnamedelima Q},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  Q\bibinitperiod},
+      }}%
+      {{hash=YBD}{%
+         family={Young},
+         familyi={Y\bibinitperiod},
+         given={Bryan\bibnamedelima D},
+         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Sinclair},
+         familyi={S\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RV}{%
+         family={Rand},
+         familyi={R\bibinitperiod},
+         given={Vikki},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=TMR}{%
+         family={Teixeira},
+         familyi={T\bibinitperiod},
+         given={Manuel\bibnamedelima R},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=JO}{%
+         family={Joseph},
+         familyi={J\bibinitperiod},
+         given={Olivia},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=RB}{%
+         family={Robinson},
+         familyi={R\bibinitperiod},
+         given={Ben},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Maddison},
+         familyi={M\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Dastugue},
+         familyi={D\bibinitperiod},
+         given={Nicole},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=VP}{%
+         family={Vandenberghe},
+         familyi={V\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Haferlach},
+         familyi={H\bibinitperiod},
+         given={Claudia},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SPJ}{%
+         family={Stephens},
+         familyi={S\bibinitperiod},
+         given={Philip\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Cheng},
+         familyi={C\bibinitperiod},
+         given={Jiqiu},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VP}{%
+         family={{Van Loo}},
+         familyi={V\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SMR}{%
+         family={Stratton},
+         familyi={S\bibinitperiod},
+         given={Michael\bibnamedelima R},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=CPJ}{%
+         family={Campbell},
+         familyi={C\bibinitperiod},
+         given={Peter\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=HCJ}{%
+         family={Harrison},
+         familyi={H\bibinitperiod},
+         given={Christine\bibnamedelima J},
+         giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Society of Hematology}%
+    }
+    \strng{namehash}{LYSCRSL+1}
+  \strng{fullhash}{LYSCRSLPERHMJPMAVDSBJGMHNACAJTPBNTNRFMGLMRJQYBDSPRVTMRJORBMMDNVPHCSPJCJVPSMRCPJHCJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Changes in gene dosage are a major driver of cancer, known to be caused by
+  a finite, but increasingly well annotated, repertoire of mutational
+  mechanisms. This can potentially generate correlated copy-number alterations
+  across hundreds of linked genes, as exemplified by the 2{\%} of childhood
+  acute lymphoblastic leukaemia (ALL) with recurrent amplification of megabase
+  regions of chromosome 21 (iAMP21). We used genomic, cytogenetic and
+  transcriptional analysis, coupled with novel bioinformatic approaches, to
+  reconstruct the evolution of iAMP21 ALL. Here we show that individuals born
+  with the rare constitutional Robertsonian translocation between chromosomes
+  15 and 21, rob(15;21)(q10;q10)c, have approximately 2,700-fold increased risk
+  of developing iAMP21 ALL compared to the general population. In such cases,
+  amplification is initiated by a chromothripsis event involving both sister
+  chromatids of the Robertsonian chromosome, a novel mechanism for cancer
+  predisposition. In sporadic iAMP21, breakage-fusion-bridge cycles are
+  typically the initiating event, often followed by chromothripsis. In both
+  sporadic and rob(15;21)c-associated iAMP21, the final stages frequently
+  involve duplications of the entire abnormal chromosome. The end-product is a
+  derivative of chromosome 21 or the rob(15;21)c chromosome with gene dosage
+  optimized for leukaemic potential, showing constrained copy-number levels
+  over multiple linked genes. Thus, dicentric chromosomes may be an important
+  precipitant of chromothripsis, as we show rob(15;21)c to be constitutionally
+  dicentric and breakage-fusion-bridge cycles generate dicentric chromosomes
+  somatically. Furthermore, our data illustrate that several cancer-specific
+  mutational processes, applied sequentially, can coordinate to fashion
+  copy-number profiles over large genomic scales, incrementally refining the
+  fitness benefits of aggregated gene dosage changes.%
+    }
+    \verb{doi}
+    \verb 10.1038/nature13115
+    \endverb
+    \field{issn}{1476-4687}
+    \field{number}{7494}
+    \field{pages}{98\bibrangedash 102}
+    \field{title}{{Constitutional and somatic rearrangement of chromosome 21 in
+  acute lymphoblastic leukaemia.}}
+    \verb{url}
+    \verb http://www.ncbi.nlm.nih.gov/pubmed/24670643 http://www.pubmedcentral.
+    \verb nih.gov/articlerender.fcgi?artid=PMC3976272
+    \endverb
+    \field{volume}{508}
+    \field{journaltitle}{Nature}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Korbel2013}{article}{}
+    \name{author}{2}{}{%
+      {{hash=KJO}{%
+         family={Korbel},
+         familyi={K\bibinitperiod},
+         given={Jan\bibnamedelima O},
+         giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod},
+      }}%
+      {{hash=CPJ}{%
+         family={Campbell},
+         familyi={C\bibinitperiod},
+         given={Peter\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KJOCPJ1}
+    \strng{fullhash}{KJOCPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Chromothripsis scars the genome when localized chromosome shattering and
+  repair occurs in a one-off catastrophe. Outcomes of this process are
+  detectable as massive DNA rearrangements affecting one or a few chromosomes.
+  Although recent findings suggest a crucial role of chromothripsis in cancer
+  development, the reproducible inference of this process remains challenging,
+  requiring that cataclysmic one-off rearrangements be distinguished from
+  localized lesions that occur progressively. We describe conceptual criteria
+  for the inference of chromothripsis, based on ruling out the alternative
+  hypothesis that stepwise rearrangements occurred. Robust means of inference
+  may facilitate in-depth studies on the impact of, and the mechanisms
+  underlying, chromothripsis.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.cell.2013.02.023
+    \endverb
+    \field{issn}{1097-4172}
+    \field{number}{6}
+    \field{pages}{1226\bibrangedash 36}
+    \field{title}{{Criteria for inference of chromothripsis in cancer
+  genomes.}}
+    \verb{url}
+    \verb http://www.ncbi.nlm.nih.gov/pubmed/23498933
+    \endverb
+    \field{volume}{152}
+    \field{journaltitle}{Cell}
+    \field{year}{2013}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Govind2014}{article}{}
+    \name{author}{12}{}{%
+      {{hash=GSK}{%
+         family={Govind},
+         familyi={G\bibinitperiod},
+         given={Shaylan\bibnamedelima K},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Zia},
+         familyi={Z\bibinitperiod},
+         given={Amin},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HYPH}{%
+         family={Hennings-Yeomans},
+         familyi={H\bibinitperiod-Y\bibinitperiod},
+         given={Pablo\bibnamedelima H},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=WJD}{%
+         family={Watson},
+         familyi={W\bibinitperiod},
+         given={John\bibnamedelima D},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fraser},
+         familyi={F\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AC}{%
+         family={Anghel},
+         familyi={A\bibinitperiod},
+         given={Catalina},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WAW}{%
+         family={Wyatt},
+         familyi={W\bibinitperiod},
+         given={Alexander\bibnamedelima W},
+         giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=vdKT}{%
+         prefix={van\bibnamedelima der},
+         prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Kwast},
+         familyi={K\bibinitperiod},
+         given={Theodorus},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=CCC}{%
+         family={Collins},
+         familyi={C\bibinitperiod},
+         given={Colin\bibnamedelima C},
+         giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=MJD}{%
+         family={McPherson},
+         familyi={M\bibinitperiod},
+         given={John\bibnamedelima D},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=BRG}{%
+         family={Bristow},
+         familyi={B\bibinitperiod},
+         given={Robert\bibnamedelima G},
+         giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=BPC}{%
+         family={Boutros},
+         familyi={B\bibinitperiod},
+         given={Paul\bibnamedelima C},
+         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GSKZAHYPH+1}
+    \strng{fullhash}{GSKZAHYPHWJDFMACWAWKTvdCCCMJDBRGBPC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    BACKGROUND Chromothripsis, a newly discovered type of complex genomic
+  rearrangement, has been implicated in the evolution of several types of
+  cancers. To date, it has been described in bone cancer, SHH-medulloblastoma
+  and acute myeloid leukemia, amongst others, however there are still no formal
+  or automated methods for detecting or annotating it in high throughput
+  sequencing data. As such, findings of chromothripsis are difficult to compare
+  and many cases likely escape detection altogether. RESULTS We introduce
+  ShatterProof, a software tool for detecting and quantifying chromothriptic
+  events. ShatterProof takes structural variation calls (translocations,
+  copy-number variations, short insertions and loss of heterozygosity) produced
+  by any algorithm and using an operational definition of chromothripsis
+  performs robust statistical tests to accurately predict the presence and
+  location of chromothriptic events. Validation of our tool was conducted using
+  clinical data sets including matched normal, prostate cancer samples in
+  addition to the colorectal cancer and SCLC data sets used in the original
+  description of chromothripsis. CONCLUSIONS ShatterProof is computationally
+  efficient, having low memory requirements and near linear computation time.
+  This allows it to become a standard component of sequencing analysis
+  pipelines, enabling researchers to routinely and accurately assess samples
+  for chromothripsis. Source code and documentation can be found at
+  http://search.cpan.org/{\~{}}sgovind/Shatterproof.%
+    }
+    \verb{doi}
+    \verb 10.1186/1471-2105-15-78
+    \endverb
+    \field{issn}{1471-2105}
+    \field{number}{1}
+    \field{pages}{78}
+    \field{title}{{ShatterProof: operational detection and quantification of
+  chromothripsis}}
+    \verb{url}
+    \verb http://www.ncbi.nlm.nih.gov/pubmed/24646301 http://www.pubmedcentral.
+    \verb nih.gov/articlerender.fcgi?artid=PMC3999944 http://bmcbioinformatics.
+    \verb biomedcentral.com/articles/10.1186/1471-2105-15-78
+    \endverb
+    \field{volume}{15}
+    \field{journaltitle}{BMC Bioinformatics}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Yang2016}{article}{}
+    \name{author}{6}{}{%
+      {{hash=YJ}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Jixiang},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=OL}{%
+         family={Ouyang},
+         familyi={O\bibinitperiod},
+         given={Liang},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=CY}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Yi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LB}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Bo},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Cai},
+         familyi={C\bibinitperiod},
+         given={Haoyang},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press}%
+    }
+    \keyw{cancer,chromosomes,gene
+  expression,genes,genome,metadata,mutation,tumor cells,
+  malignant,tumorigenesis}
+    \strng{namehash}{YJLJOL+1}
+    \strng{fullhash}{YJLJOLCYLBCH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/nar/gkw434
+    \endverb
+    \field{issn}{0305-1048}
+    \field{number}{W1}
+    \field{pages}{W252\bibrangedash W258}
+    \field{title}{{CTLPScanner: a web server for chromothripsis-like pattern
+  detection}}
+    \verb{url}
+    \verb https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkw434
+    \endverb
+    \field{volume}{44}
+    \field{journaltitle}{Nucleic Acids Research}
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Zhang2013}{article}{}
+    \name{author}{3}{}{%
+      {{hash=ZCZ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Cheng-Zhong},
+         giveni={C\bibinitperiod-Z\bibinitperiod},
+      }}%
+      {{hash=LML}{%
+         family={Leibowitz},
+         familyi={L\bibinitperiod},
+         given={Mitchell\bibnamedelima L},
+         giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Pellman},
+         familyi={P\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \keyw{cancer,chromoanasynthesis,chromoplexy,chromosomal
+  translocation,chromothripsis,copy number alteration,genome evolution}
+    \strng{namehash}{ZCZLMLPD1}
+    \strng{fullhash}{ZCZLMLPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Recent genome sequencing studies have identified several classes of complex
+  genomic rearrangements that appear to be derived from a single catastrophic
+  event. These discoveries identify ways that genomes can be altered in single
+  large jumps rather than by many incremental steps. Here we compare and
+  contrast these phenomena and examine the evidence that they arise "all at
+  once." We consider the impact of massive chromosomal change for the
+  development of diseases such as cancer and for evolution more generally.
+  Finally, we summarize current models for underlying mechanisms and discuss
+  strategies for testing these models.%
+    }
+    \verb{doi}
+    \verb 10.1101/gad.229559.113
+    \endverb
+    \field{issn}{1549-5477}
+    \field{number}{23}
+    \field{pages}{2513\bibrangedash 30}
+    \field{title}{{Chromothripsis and beyond: rapid genome evolution from
+  complex chromosomal rearrangements.}}
+    \verb{url}
+    \verb http://www.ncbi.nlm.nih.gov/pubmed/24298051 http://www.pubmedcentral.
+    \verb nih.gov/articlerender.fcgi?artid=PMC3861665
+    \endverb
+    \field{volume}{27}
+    \field{journaltitle}{Genes {\&} development}
+    \field{year}{2013}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Rausch2012}{article}{}
+    \name{author}{51}{}{%
+      {{hash=RT}{%
+         family={Rausch},
+         familyi={R\bibinitperiod},
+         given={Tobias},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={David T.W.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ZM}{%
+         family={Zapatka},
+         familyi={Z\bibinitperiod},
+         given={Marc},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={St{\"{u}}tz},
+         familyi={S\bibinitperiod},
+         given={Adrian M.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ZT}{%
+         family={Zichner},
+         familyi={Z\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Weischenfeldt},
+         familyi={W\bibinitperiod},
+         given={Joachim},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JN}{%
+         family={J{\"{a}}ger},
+         familyi={J\bibinitperiod},
+         given={Natalie},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Remke},
+         familyi={R\bibinitperiod},
+         given={Marc},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Shih},
+         familyi={S\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=NP}{%
+         family={Northcott},
+         familyi={N\bibinitperiod},
+         given={Paul A.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=PE}{%
+         family={Pfaff},
+         familyi={P\bibinitperiod},
+         given={Elke},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=TJ}{%
+         family={Tica},
+         familyi={T\bibinitperiod},
+         given={Jelena},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WQ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Qi},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={Massimi},
+         familyi={M\bibinitperiod},
+         given={Luca},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=WH}{%
+         family={Witt},
+         familyi={W\bibinitperiod},
+         given={Hendrik},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Bender},
+         familyi={B\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Pleier},
+         familyi={P\bibinitperiod},
+         given={Sabrina},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Cin},
+         familyi={C\bibinitperiod},
+         given={Huriye},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Hawkins},
+         familyi={H\bibinitperiod},
+         given={Cynthia},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BC}{%
+         family={Beck},
+         familyi={B\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=vA}{%
+         family={von Deimling},
+         familyi={v\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HV}{%
+         family={Hans},
+         familyi={H\bibinitperiod},
+         given={Volkmar},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=BB}{%
+         family={Brors},
+         familyi={B\bibinitperiod},
+         given={Benedikt},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=ER}{%
+         family={Eils},
+         familyi={E\bibinitperiod},
+         given={Roland},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SW}{%
+         family={Scheurlen},
+         familyi={S\bibinitperiod},
+         given={Wolfram},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Blake},
+         familyi={B\bibinitperiod},
+         given={Jonathon},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BV}{%
+         family={Benes},
+         familyi={B\bibinitperiod},
+         given={Vladimir},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Kulozik},
+         familyi={K\bibinitperiod},
+         given={Andreas E.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WO}{%
+         family={Witt},
+         familyi={W\bibinitperiod},
+         given={Olaf},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Martin},
+         familyi={M\bibinitperiod},
+         given={Dianna},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ZC}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Cindy},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Porat},
+         familyi={P\bibinitperiod},
+         given={Rinnat},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=MDM}{%
+         family={Merino},
+         familyi={M\bibinitperiod},
+         given={Diana\bibnamedelima M.},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wasserman},
+         familyi={W\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JN}{%
+         family={Jabado},
+         familyi={J\bibinitperiod},
+         given={Nada},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Fontebasso},
+         familyi={F\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BL}{%
+         family={Bullinger},
+         familyi={B\bibinitperiod},
+         given={Lars},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RFG}{%
+         family={R{\"{u}}cker},
+         familyi={R\bibinitperiod},
+         given={Frank\bibnamedelima G.},
+         giveni={F\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=DK}{%
+         family={D{\"{o}}hner},
+         familyi={D\bibinitperiod},
+         given={Konstanze},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=DH}{%
+         family={D{\"{o}}hner},
+         familyi={D\bibinitperiod},
+         given={Hartmut},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Koster},
+         familyi={K\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Molenaar},
+         familyi={M\bibinitperiod},
+         given={Jan J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Versteeg},
+         familyi={V\bibinitperiod},
+         given={Rogier},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kool},
+         familyi={K\bibinitperiod},
+         given={Marcel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=TU}{%
+         family={Tabori},
+         familyi={T\bibinitperiod},
+         given={Uri},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Malkin},
+         familyi={M\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Korshunov},
+         familyi={K\bibinitperiod},
+         given={Andrey},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TM}{%
+         family={Taylor},
+         familyi={T\bibinitperiod},
+         given={Michael D.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Lichter},
+         familyi={L\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Pfister},
+         familyi={P\bibinitperiod},
+         given={Stefan M.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Korbel},
+         familyi={K\bibinitperiod},
+         given={Jan O.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RTJDZM+1}
+  \strng{fullhash}{RTJDZMSAZTWJJNRMSDNPPETJWQMLWHBSPSCHHCBCvAHVBBERSWBJBVKAWOMDZCPRMDMWJJNFABLRFGDKDHKJMJVRKMTUMDKATMLPPSKJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.cell.2011.12.013
+    \endverb
+    \field{issn}{00928674}
+    \field{number}{1-2}
+    \field{pages}{59\bibrangedash 71}
+    \field{title}{{Genome Sequencing of Pediatric Medulloblastoma Links
+  Catastrophic DNA Rearrangements with TP53 Mutations}}
+    \verb{url}
+    \verb http://linkinghub.elsevier.com/retrieve/pii/S0092867411015169
+    \endverb
+    \field{volume}{148}
+    \field{journaltitle}{Cell}
+    \field{annotation}{%
+    NULL%
+    }
+    \field{year}{2012}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Song2012}{article}{}
+    \name{author}{24}{}{%
+      {{hash=SS}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Sarah},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=NK}{%
+         family={Nones},
+         familyi={N\bibinitperiod},
+         given={Katia},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Miller},
+         familyi={M\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HI}{%
+         family={Harliwong},
+         familyi={H\bibinitperiod},
+         given={Ivon},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=KKS}{%
+         family={Kassahn},
+         familyi={K\bibinitperiod},
+         given={Karin\bibnamedelima S.},
+         giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Pinese},
+         familyi={P\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Pajic},
+         familyi={P\bibinitperiod},
+         given={Marina},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GAJ}{%
+         family={Gill},
+         familyi={G\bibinitperiod},
+         given={Anthony\bibnamedelima J.},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=JAL}{%
+         family={Johns},
+         familyi={J\bibinitperiod},
+         given={Amber\bibnamedelima L.},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Anderson},
+         familyi={A\bibinitperiod},
+         given={Matthew},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HO}{%
+         family={Holmes},
+         familyi={H\bibinitperiod},
+         given={Oliver},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Leonard},
+         familyi={L\bibinitperiod},
+         given={Conrad},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=TD}{%
+         family={Taylor},
+         familyi={T\bibinitperiod},
+         given={Darrin},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Wood},
+         familyi={W\bibinitperiod},
+         given={Scott},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=XQ}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Qinying},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=NF}{%
+         family={Newell},
+         familyi={N\bibinitperiod},
+         given={Felicity},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=CMJ}{%
+         family={Cowley},
+         familyi={C\bibinitperiod},
+         given={Mark\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Jianmin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Wilson},
+         familyi={W\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=FL}{%
+         family={Fink},
+         familyi={F\bibinitperiod},
+         given={Lynn},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=BAV}{%
+         family={Biankin},
+         familyi={B\bibinitperiod},
+         given={Andrew\bibnamedelima V.},
+         giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=WN}{%
+         family={Waddell},
+         familyi={W\bibinitperiod},
+         given={Nic},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=GSM}{%
+         family={Grimmond},
+         familyi={G\bibinitperiod},
+         given={Sean\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=PJV}{%
+         family={Pearson},
+         familyi={P\bibinitperiod},
+         given={John\bibnamedelima V.},
+         giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=TAH}{%
+         family={Ting},
+         familyi={T\bibinitperiod},
+         given={Angela\bibnamedelima H.},
+         giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Public Library of Science}%
+    }
+    \strng{namehash}{SSNKMD+1}
+    \strng{fullhash}{SSNKMDHIKKSPMPMGAJJALAMHOLCTDWSXQNFCMJWJWPFLBAVWNGSMPJV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1371/journal.pone.0045835
+    \endverb
+    \field{issn}{1932-6203}
+    \field{number}{9}
+    \field{pages}{e45835}
+    \field{title}{{qpure: A Tool to Estimate Tumor Cellularity from Genome-Wide
+  Single-Nucleotide Polymorphism Profiles}}
+    \verb{url}
+    \verb http://dx.plos.org/10.1371/journal.pone.0045835
+    \endverb
+    \field{volume}{7}
+    \verb{file}
+    \verb :Users/isidro/Library/Application Support/Mendeley Desktop/Downloaded
+    \verb /Song et al. - 2012 - qpure A Tool to Estimate Tumor Cellularity from
+    \verb  Genome-Wide Single-Nucleotide Polymorphism Profiles.pdf:pdf
+    \endverb
+    \field{journaltitle}{PLoS ONE}
+    \field{year}{2012}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+\endsortlist
+\endinput

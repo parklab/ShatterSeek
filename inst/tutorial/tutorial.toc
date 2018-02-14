@@ -1,0 +1,35 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Workflow implemented in Shatterseek}{3}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Detection of clusters of interleaved SVs}{4}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Statistical criteria implemented in Shatterseek}{5}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.1}Equal distribution of fragment joints}{5}{subsubsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.2}Chromosomal enrichment of breakpoints}{5}{subsubsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.3}Random distribution of breakpoints}{5}{subsubsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.4}Number of oscillating copy number segments}{6}{subsubsection.2.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.5}Interspersed loss of heterozygosity (LOH)}{6}{subsubsection.2.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Detection of multichromosomal chromothripsis events}{6}{subsection.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Recommended cut-off values to intepret the output of Shatterseek}{7}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Shatterkeek tutorial}{8}{section.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Installation}{8}{subsection.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Load SVs and CN data into R}{8}{subsection.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Visualization of chromothripsis regions}{12}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Visualization of multichromosomal chromothripsis events}{13}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Bibliography}{13}{section.7}

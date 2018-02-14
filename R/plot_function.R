@@ -1,4 +1,4 @@
-plot_chromothripsis <- function(shatterSeek_output, chr=chr,BAF=NULL,sample_name="",
+plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name="",
 								DEL_color='darkorange1',DUP_color='blue1',
 								t2tINV_color="forestgreen",h2hINV_color="black",
 								arc_size=.2){

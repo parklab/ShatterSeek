@@ -1,4 +1,4 @@
-Package: shatterSeek
+Package: ShatterSeek
 Type: Package
 Title: Chromothripis detection from structural variation and copy
         number variation data

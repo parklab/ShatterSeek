@@ -17,8 +17,7 @@ thus enabling the visual inspection of the candidate chromothripsis regions dete
 ShatterSeek is fast, with an average running time of ~20s per sample.
 
 
-Further details about the implementation and  
-validation of ShatterSeek
+Further details about the implementation and validation of ShatterSeek
 using ~2,600 whole-genome sequencing data sets from The Pan-Cancer Analysis of Whole Genomes (PCAWG) project
 can be found in the following publication:
 
@@ -30,9 +29,7 @@ All the chromothripsis calls reported in that publication can be visualized at: 
 
 A detailed tutorial illustrating how to use ShatterSeek is provided in ./inst/tutorial/tutorial.pdf
 
-ShatterSeek is free for academic use **only**.
-
-For non-academic use, please email Dr. Tatiana Demidova-Rice at Harvard University Office of Technology Development (tatiana\_demidova-rice@harvard.edu)
+ShatterSeek is free for academic use **only**. For non-academic use, please email Dr. Tatiana Demidova-Rice at Harvard University Office of Technology Development (tatiana\_demidova-rice@harvard.edu)
 
 # Prerequisites
 

@@ -53,8 +53,9 @@ Please note that ShatterSeek expects adjacent copy number segments to have a dif
 If two adjacent regions have the same copy number value but are considered as two separate entries in your copy number
 data.frame, please merge them. You can use the following code:
 
+```R
 ## d is a data.frame with colums: chr, start, end, total_cn
-dd <- d 
+dd <- d
 dd$total_cn[dd$total_cn == 0] <- 150000
 dd$total_cn[is.na(dd$total_cn)] <- 0
 library(GenomicRanges)
@@ -67,6 +68,7 @@ dd1 = dd1[,c(1,2,3,6)]
 names(dd1) <- names(d)[1:4]
 dd1$total_cn[dd1$total_cn == 150000] <- 0
 d= dd1; rm(dd)
+```
 
 # Contact
 If you have any questions or suggestions please contact us:

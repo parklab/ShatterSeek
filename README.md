@@ -36,7 +36,6 @@ ShatterSeek is free for academic use **only**. For non-academic use, please emai
 ShatterSeek is written entirely in R (>= 3.0.1) and depends on the following packages:
 methods, BiocGenerics, graph, S4Vectors, GenomicRanges, IRanges, MASS, ggplot2, grid, and gridExtra
 
-
 # Installation
 `$ git clone https://github.com/parklab/ShatterSeek.git`
 
@@ -49,7 +48,25 @@ install_github("parklab/ShatterSeek")
 ```
 
 # How to use
-Please see the package tutorial (especially section "How to use Shatterkeek")
+Please see the package tutorial (especially section "How to use Shatterkeek").
+Please note that ShatterSeek expects adjacent copy number segments to have a different copy number value. 
+If two adjacent regions have the same copy number value but are considered as two separate entries in your copy number
+data.frame, please merge them. You can use the following code:
+
+## d is a data.frame with colums: chr, start, end, total_cn
+dd <- d 
+dd$total_cn[dd$total_cn == 0] <- 150000
+dd$total_cn[is.na(dd$total_cn)] <- 0
+library(GenomicRanges)
+dd <- as(dd,"GRanges")
+cov <- coverage(dd,weight = dd$total_cn)
+dd1 <- as(cov,"GRanges")
+dd1 <- as.data.frame(dd1)
+dd1 <- dd1[dd1$score !=0,]
+dd1 = dd1[,c(1,2,3,6)]
+names(dd1) <- names(d)[1:4]
+dd1$total_cn[dd1$total_cn == 150000] <- 0
+d= dd1; rm(dd)
 
 # Contact
 If you have any questions or suggestions please contact us:

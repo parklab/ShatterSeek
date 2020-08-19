@@ -23,7 +23,7 @@ can be found in the following publication:
 
 **Comprehensive analysis of chromothripsis in 2,658 human cancers using whole-genome sequencing**
 
-Cortes-Ciriano et al. 2018
+[Cortes-Ciriano et al. Nature Genetics, 2020][https://www.nature.com/articles/s41588-019-0576-7]
 
 All the chromothripsis calls reported in that publication can be visualized at: http://compbio.med.harvard.edu/chromothripsis/
 

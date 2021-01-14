@@ -29,7 +29,7 @@ All the chromothripsis calls reported in that publication can be visualized at: 
 
 A detailed tutorial illustrating how to use ShatterSeek is provided in ./inst/tutorial/tutorial.pdf
 
-ShatterSeek is free for academic use **only**. For non-academic use, please email Dr. Tatiana Demidova-Rice at Harvard University Office of Technology Development (tatiana\_demidova-rice@harvard.edu)
+ShatterSeek is free for academic use **only**. For non-academic use, please email Dr. Adrian Li at Harvard University Office of Technology Development (adrian\_li@harvard.edu)
 
 # Prerequisites
 

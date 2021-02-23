@@ -63,8 +63,8 @@ statistical_criteria = function(input){
             max_number_oscillating_CN_segments_2_states = fmaxmax(1,v) #XXX
             max_number_oscillating_CN_segments_3_states = fmaxmax(1,v_3states) #XXX
             summary$number_CN_segments_chr[index_chromosome] = number_CN_segments
-            summary$max_number_oscillating_CN_segments_2_states_chr[index_chromosome] = max_number_oscillating_CN_segments_2_states
-            summary$max_number_oscillating_CN_segments_3_states_chr[index_chromosome] = max_number_oscillating_CN_segments_3_states
+            summary$max_number_oscillating_CN_segments_2_states_chr[index_chromosome] = max_number_oscillating_CN_segments_2_states + 2
+            summary$max_number_oscillating_CN_segments_3_states_chr[index_chromosome] = max_number_oscillating_CN_segments_3_states + 2
         }
 
         if(nrow(SVsnow) !=0){
@@ -94,9 +94,9 @@ statistical_criteria = function(input){
                         number_CN_segments = length(v)
                         max_number_oscillating_CN_segments_2_states = fmaxmax(1,v) #XXX
 
-                        summary$max_number_oscillating_CN_segments_3_states[index_chromosome] = max_number_oscillating_CN_segments_3_states
+                        summary$max_number_oscillating_CN_segments_3_states[index_chromosome] = max_number_oscillating_CN_segments_3_states + 2
                         #summary$number_CN_segments[index_chromosome] = number_CN_segments
-                        summary$max_number_oscillating_CN_segments_2_states[index_chromosome] = max_number_oscillating_CN_segments_2_states
+                        summary$max_number_oscillating_CN_segments_2_states[index_chromosome] = max_number_oscillating_CN_segments_2_states + 2
                     }
                 }
 

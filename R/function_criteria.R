@@ -311,7 +311,7 @@ statistical_criteria = function(input){
         summary$number_DUP[index_chromosome] = obs[4]
         summary$clusterSize_including_TRA[index_chromosome] = sum(obs2)
 
-        if(nrow(SVsnow) != 0){
+        if(nrow(SVsnow) != 0 & sum(obs2)>0){
             signif <- chisq.test(obs2, p=rep(1/4,4))$p.val
             summary$pval_fragment_joins[index_chromosome] <- signif} else{
                 summary$pval_fragment_joins[index_chromosome] <- NA

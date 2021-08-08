@@ -2,7 +2,7 @@ Package: ShatterSeek
 Type: Package
 Title: Chromothripis detection from structural variation and copy
         number variation data
-Version: 0.4
+Version: 0.5
 Date: 2017-05-25
 Author: Isidro Cortes-Ciriano and Ruibin Xi
 Maintainer: Isidro Cortes-Ciriano <isidrolauscher@gmail.com>

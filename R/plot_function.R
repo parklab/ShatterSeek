@@ -18,7 +18,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 								DEL_color='darkorange1',DUP_color='blue1',
 								t2tINV_color="forestgreen",h2hINV_color="black",
 								arc_size=.2){
-
+	chromNames = paste0('chr', c(1:22, 'X')) 
 	if ( !(as.character(chr) %in% chromNames)){stop("Chromosome not valid")}
 
 	common_ggplot2 <- theme_bw() + theme(axis.text.x=element_text(size=7,angle=0),
@@ -71,11 +71,20 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	d = data.frame(x=c(min_coord),y=c(1),leg=c("DEL","DUP","t2tINV","h2hINV"))
 	idx = c()
 	
-	idx1=which(CNVsnow$start >= min_coord)
-	idx2=which(CNVsnow$end <= max_coord)   
-	idx=intersect(idx1,idx2)
-	CNVsnow = CNVsnow[idx,]
+	idx1=which(CNVsnow$start <= min_coord & CNVsnow$end > min_coord) 
+    idx2=which(CNVsnow$start >= min_coord & CNVsnow$end <= max_coord) 
+    idx3=which(CNVsnow$end >= max_coord & CNVsnow$start < max_coord) 
+    idx=c(idx1, idx2, idx3) 
 
+	#idx1=which(CNVsnow$start >= min_coord)
+	#idx2=which(CNVsnow$end <= max_coord)   
+	#idx=intersect(idx1,idx2)
+
+
+	CNVsnow = CNVsnow[idx,]
+	CNVsnow[1,]$start = min_coord
+	CNVsnow[nrow(CNVsnow),]$end = max_coord
+	
 	SV_plot = ggplot(d,aes(x=x,y=y)) +
 		geom_point(colour="white") + ylim(0,y2+5) + common_ggplot2  +
 		geom_line(data=rbind(d,d),aes(x=x,y=y,colour=leg)) 
@@ -103,7 +112,9 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 		inter$colour[which(inter$SVtype == "h2hINV")] = "black"
 		inter$colour[which(inter$SVtype == "t2tINV")] = "forestgreen"
 
-		inter = data.frame(pos = c(inter$pos1,inter$pos2), y=c(inter$y,inter$y), SVtype=c(inter$SVtype,inter$SVtype) )
+		#inter = data.frame(pos = c(inter$pos1,inter$pos2), y=c(inter$y,inter$y), SVtype=c(inter$SVtype,inter$SVtype) )
+		inter = data.frame(chr = c(inter$chrom1,inter$chrom2), pos = c(inter$pos1,inter$pos2), y=c(inter$y,inter$y), SVtype=c(inter$SVtype,inter$SVtype) )
+		inter = inter[inter$chr == cand, c(2:4)]
 		SV_plot = SV_plot + geom_point(data=inter,size=1,alpha=1,aes(x=pos,y=as.numeric(y),colour=SVtype))
 	}
 	#-------------------------------------------------------------------------------------------------------
@@ -184,7 +195,8 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 		CNV_plot = ggplot() +
 			geom_segment(data=CNVsnow, aes(x = start, y =total_cn , xend = end, yend = total_cn),size=2) + 
 			common_ggplot2 + ylab("CN")+ xlab(NULL)+
-			scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")})#,limits=c(min_coord,max_coord))
+			#scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")})#,limits=c(min_coord,max_coord))
+		scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")},limits=c(min_coord,max_coord))
 		CNV_plot = CNV_plot + 
 			scale_y_continuous(minor_breaks = NULL,breaks=c(0,sort(unique(CNVsnow$total_cn))),limits=c(min(CNVsnow$total_cn) -0.35,max(CNVsnow$total_cn)+.35)) 
 	}
@@ -198,7 +210,8 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 
 	CNV_plot = ggplot() + geom_segment(data=CNVsnow, aes(x = start, y =log(total_cn,base=2), xend = end, yend = log(total_cn,base=2)),size=2) + 
 					common_ggplot2 + ylab("CN")+ xlab(NULL)+ 
-					scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")})#,limits=c(min_coord,max_coord))
+					#scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")})#,limits=c(min_coord,max_coord))
+					 scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")},limits=c(min_coord,max_coord))
 
 	CNV_plot = CNV_plot + scale_y_continuous(minor_breaks = NULL,breaks=log(mm,base=2), 
 											   limits=c( -.01 + log(min(CNVsnow$total_cn),base=2), 
@@ -212,7 +225,8 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 			geom_segment(data=CNVsnow, aes(x = start, y =log(total_cn,base=10) , xend = end, yend = log(total_cn,base=10)),size=2) + 
 			common_ggplot2 + #scale_color_manual(values=c("forestgreen","red1","blue","brown")) +
 			ylab("CN")+ xlab(NULL)+ 
-			scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")})#,limits=c(min_coord,max_coord))
+			#scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")})#,limits=c(min_coord,max_coord))
+		scale_x_continuous(expand = c(0.01,0.01),labels = function(x){paste(x/1000000,"MB")},limits=c(min_coord,max_coord))
 		mm2 = max(CNVsnow$total_cn)
 		mm = c(0,1,2,4,20,50,100,mm2)
 		CNV_plot = CNV_plot + scale_y_continuous(minor_breaks = NULL,breaks=log(mm,base=10), 
@@ -254,7 +268,8 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	ideogram = ideogram +ylim(0,4)
 	ideogram = ideogram + annotate(geom = "text",x = (chr_info_annot$start+chr_info_annot$end)/2,y=chr_info_annot$y + 1.2,
 								   label=chr_info_annot$name,vjust=.5, angle=90,size=2)
-	ideogram = ideogram +theme_bw() + common_ggplot2_chrom + #xlim(min_coord,max_coord) + 
+	#ideogram = ideogram +theme_bw() + common_ggplot2_chrom + #xlim(min_coord,max_coord) + 
+	ideogram = ideogram +theme_bw() + common_ggplot2_chrom + xlim(min_coord,max_coord) + 
 		scale_x_continuous(expand = c(0.01,0.01)) +
 		coord_cartesian(xlim=c(min_coord, max_coord))
 
@@ -276,8 +291,11 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	}
 
 	summary$pos = paste(summary$chrom,":",summary$start,"-",summary$end,sep="")
-	summary$oscillations = paste(summary$max_number_oscillating_CN_segments_2_states,";",
-								 summary$max_number_oscillating_CN_segments_2_states_3states,sep="")
+	#summary$oscillations = paste(summary$max_number_oscillating_CN_segments_2_states,";",
+	#								 summary$max_number_oscillating_CN_segments_2_states_3states,sep="")
+
+	 summary$oscillations = paste(summary$max_number_oscillating_CN_segments_2_states,";",
+                              summary$max_number_oscillating_CN_segments_3_states,sep="")
 
 	cols_sel = c("pos",
 				 #"clusterSize",

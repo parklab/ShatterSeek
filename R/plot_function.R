@@ -301,7 +301,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 				 #"clusterSize",
 				 "clusterSize_including_TRA",
 				 "number_SVs_sample",
-				 "max_number_oscillating_CN_segments_2_states",
+				 "max_number_oscillating_CN_segments_3_states",
 				 "number_CNV_segments",
 				 "chr_breakpoint_enrichment",
 				 "pval_exp_cluster",

@@ -124,7 +124,7 @@ setAs("chromoth","data.frame",function(from,to){
 					})
 
 ## if chromNames is not NULL, return the maximum number of cluster size in each chromsome specified in chromNames
-cluster.SV = function(SV.sample,min.Size=1,chromNames){
+cluster.SV = function(SV.sample,min.Size=3,chromNames){
 	SV.df = as.data.frame(SV.sample)
 	SV.df$chromothEvent = rep(0,nrow(SV.df))
 
@@ -219,7 +219,7 @@ cluster.SV = function(SV.sample,min.Size=1,chromNames){
 #' @param seg.sample an instance of class CNVsegs
 #' @param min.Size minimum number of inleaved SVs required to report a cluster. Default is 1
 #' @export
-shatterseek = function(SV.sample,seg.sample,min.Size=1){
+shatterseek = function(SV.sample,seg.sample,min.Size=3){
 
 	cat("Running..\n\n\n")
 	if(!is(SV.sample,"SVs")){stop("SV.sample must be a SVs object")}

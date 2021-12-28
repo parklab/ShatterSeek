@@ -39,7 +39,7 @@ methods, BiocGenerics, graph, S4Vectors, GenomicRanges, IRanges, MASS, ggplot2, 
 # Installation
 `$ git clone https://github.com/parklab/ShatterSeek.git`
 
-`$ R CMD INSTALL ShatterSeek-master`
+`$ R CMD INSTALL ShatterSeek`
 
 Alternatively you can install ShatterSeek directly from R using devtools:
 ```R
@@ -68,6 +68,71 @@ dd1 = dd1[,c(1,2,3,6)]
 names(dd1) <- names(d)[1:4]
 dd1$total_cn[dd1$total_cn == 150000] <- 0
 d= dd1; rm(dd)
+```
+
+# Example 
+Once installed you can run ShatterSeek with example data.
+
+```R
+library(Shatterkeek)
+data(DO17373)
+```
+Prepare structural variation (SV) data:
+
+```R
+SV_data <- SVs(chrom1=as.character(SV_DO17373$chrom1), 
+			   pos1=as.numeric(SV_DO17373$start1),
+			   chrom2=as.character(SV_DO17373$chrom2), 
+			   pos2=as.numeric(SV_DO17373$end2),
+			   SVtype=as.character(SV_DO17373$svclass), 
+			   strand1=as.character(SV_DO17373$strand1),
+			   strand2=as.character(SV_DO17373$strand2))
+```
+
+Prepare copy number (CN) data:
+
+```R
+CN_data <- CNVsegs(chrom=as.character(SCNA_DO17373$chromosome),
+				   start=SCNA_DO17373$start,
+				   end=SCNA_DO17373$end,
+				   total_cn=SCNA_DO17373$total_cn)
+
+```
+
+Run ShatterSeek:
+
+```R
+chromothripsis <- shatterseek(
+                SV.sample=SV_data,
+                seg.sample=CN_data,
+                genome="hg19")
+```
+
+Plot chromothripsis per chromosome:
+
+```R
+library(gridExtra)
+library(cowplot)
+
+plots_chr21 <- plot_chromothripsis(ShatterSeek_output = chromothripsis, 
+              chr = "chr21", sample_name="DO17373", genome="hg19")
+              
+plot_chr21 = arrangeGrob(plots_chr21[[1]],
+                         plots_chr21[[2]],
+                         plots_chr21[[3]],
+                         plots_chr21[[4]],
+                         nrow=4,ncol=1,heights=c(0.2,.4,.4,.4))
+
+plots_chrX <- plot_chromothripsis(ShatterSeek_output = chromothripsis, 
+              chr = "chrX", sample_name="DO17373", genome="hg19")
+plot_chrX = arrangeGrob(plots_chrX[[1]],
+                        plots_chrX[[2]],
+                        plots_chrX[[3]],
+                        plots_chrX[[4]],
+                         nrow=4,ncol=1,heights=c(0.2,.4,.4,.4))
+                         
+plot_grid(plot_chr21, plot_chrX)
+
 ```
 
 # Contact

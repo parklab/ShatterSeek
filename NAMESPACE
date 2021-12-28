@@ -2,7 +2,7 @@ import(methods)
 
 import(S4Vectors)
 
-importFrom(stats, setNames)
+importFrom("stats", "binom.test", "chisq.test", "ks.test", "rexp","setNames")
 
 import(BiocGenerics)
 
@@ -17,6 +17,10 @@ import(ggplot2)
 import(grid)
 
 import(gridExtra)
+
+import(foreach)
+
+import(graph)
 
 export(shatterseek,SVs,CNVsegs,plot_chromothripsis)
 

@@ -20,7 +20,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 								DEL_color='darkorange1',DUP_color='blue1',
 								t2tINV_color="forestgreen",h2hINV_color="black",
 								arc_size=.2, genome = "hg19"){
-	chromNames = paste0('chr', c(1:22, 'X')) 
+	chromNames = c( paste0('chr', c(1:22, 'X')) , c(1:22, 'X'))
 	if ( !(as.character(chr) %in% chromNames)){stop("Chromosome not valid")}
 
 	common_ggplot2 <- theme_bw() + theme(axis.text.x=element_text(size=7,angle=0),
@@ -109,10 +109,10 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 		inter$type_SV[which(inter$strand1 == "+" & inter$strand2 == "+")] = "h2hINV"
 		inter$SVtype = inter$type_SV; inter$type_SV=NULL
 		inter$colour = rep("",nrow(inter))
-		inter$colour[which(inter$SVtype == "DUP")] = "blue1"
-		inter$colour[which(inter$SVtype == "DEL")] = "darkorange1"
-		inter$colour[which(inter$SVtype == "h2hINV")] = "black"
-		inter$colour[which(inter$SVtype == "t2tINV")] = "forestgreen"
+		inter$colour[which(inter$SVtype == "DUP")] = DUP_color
+		inter$colour[which(inter$SVtype == "DEL")] = DEL_color
+		inter$colour[which(inter$SVtype == "h2hINV")] = h2hINV_color
+		inter$colour[which(inter$SVtype == "t2tINV")] = t2tINV_color
 
 		#inter = data.frame(pos = c(inter$pos1,inter$pos2), y=c(inter$y,inter$y), SVtype=c(inter$SVtype,inter$SVtype) )
 		inter = data.frame(chr = c(inter$chrom1,inter$chrom2), pos = c(inter$pos1,inter$pos2), y=c(inter$y,inter$y), SVtype=c(inter$SVtype,inter$SVtype) )
@@ -129,7 +129,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	now = df[df$SVtype == "DUP",]
 	if (nrow(now) > 0){
 		for (i in 1:nrow(now)){
-			SV_plot = SV_plot + geom_curve( size=arc_size,data = now[i,] , aes(x = pos1, y = y1, xend = pos2, yend = y1), curvature = now$curv[i],colour="blue1",ncp=8)
+			SV_plot = SV_plot + geom_curve( size=arc_size,data = now[i,] , aes(x = pos1, y = y1, xend = pos2, yend = y1), curvature = now$curv[i],colour=DUP_color,ncp=8)
 		}
 		idx= c(idx,1)
 	}
@@ -139,7 +139,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	now = df[df$SVtype == "DEL",]
 	if (nrow(now) > 0){
 		for (i in 1:nrow(now)){
-			SV_plot = SV_plot + geom_curve( size=arc_size,data = now[i,] , aes(x = pos1, y = y1, xend = pos2, yend = y1), curvature = -1*now$curv[i],colour="darkorange1") 
+			SV_plot = SV_plot + geom_curve( size=arc_size,data = now[i,] , aes(x = pos1, y = y1, xend = pos2, yend = y1), curvature = -1*now$curv[i],colour=DEL_color) 
 		}
 		idx= c(idx,2)
 	}
@@ -148,7 +148,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	now = df[df$SVtype == "t2tINV",]
 	if (nrow(now) > 0){
 		for (i in 1:nrow(now)){
-			SV_plot = SV_plot + geom_curve( size=arc_size,data = now[i,] , aes(x = pos1, y = y2, xend = pos2, yend = y2), curvature = now$curv[i],colour="forestgreen") 
+			SV_plot = SV_plot + geom_curve( size=arc_size,data = now[i,] , aes(x = pos1, y = y2, xend = pos2, yend = y2), curvature = now$curv[i],colour=t2tINV_color) 
 		}
 		idx= c(idx,3)
 	}
@@ -159,7 +159,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	if (nrow(now) > 0){
 		for (i in 1:nrow(now)){
 			SV_plot = SV_plot + geom_curve( size=arc_size,data = now[i,] , 
-										   aes(x = pos1, y = y2, xend = pos2, yend = y2), curvature = -1*now$curv[i],colour="black") 
+										   aes(x = pos1, y = y2, xend = pos2, yend = y2), curvature = -1*now$curv[i],colour=h2hINV_color) 
 		}
 		idx= c(idx,4)
 	}
@@ -173,11 +173,11 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	scale_x_continuous(expand = c(0.01,0.01))+ coord_cartesian(xlim=c(min_coord,max_coord))
 
 	idx = c(1,2,3,4)
-	vals = c(DEL_color='darkorange1',DUP_color='blue1',t2tINV_color="forestgreen",h2hINV_color="black")
+	vals = c(DEL_color=DEL_color,DUP_color=DUP_color,t2tINV_color=t2tINV_color,h2hINV_color=h2hINV_color)
 	labs = c('DEL','DUP',"t2tINV","h2hINV")
 
 	SV_plot = SV_plot +  scale_colour_manual(name = 'SV type', 
-										 values =c('darkorange1','blue1',"forestgreen","black"),
+										 values =c(DEL_color,DUP_color,t2tINV_color,h2hINV_color),
 										 labels = labs[idx]) + theme(legend.position="none")
 
 

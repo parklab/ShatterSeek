@@ -18,7 +18,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 								DEL_color='darkorange1',DUP_color='blue1',
 								t2tINV_color="forestgreen",h2hINV_color="black",
 								arc_size=.2){
-	chromNames = paste0('chr', c(1:22, 'X')) 
+	chromNames = c( paste0('chr', c(1:22, 'X')) , c(1:22, 'X'))
 	if ( !(as.character(chr) %in% chromNames)){stop("Chromosome not valid")}
 
 	common_ggplot2 <- theme_bw() + theme(axis.text.x=element_text(size=7,angle=0),

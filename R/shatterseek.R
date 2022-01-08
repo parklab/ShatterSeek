@@ -217,15 +217,17 @@ cluster.SV = function(SV.sample,min.Size=1,chromNames){
 #' Identified cluster of interleaved SVs and calculates statistical metrics for each chromosome (chromosomes 1-22 and X)
 #' @param SV.sample an instance of class SVs
 #' @param seg.sample an instance of class CNVsegs
-#' @param min.Size minimum number of inleaved SVs required to report a cluster. Default is 1
+#' @param min.Size minimum number of inleaved SVs required to report a cluster. Default is 3
+#' @param genome reference genome (hg19 or hg38)
 #' @export
-shatterseek = function(SV.sample,seg.sample,min.Size=1){
-
+shatterseek = function(SV.sample,seg.sample,min.Size=1, genome="hg19"){
 	cat("Running..\n\n\n")
 	if(!is(SV.sample,"SVs")){stop("SV.sample must be a SVs object")}
 	if(!missing(seg.sample)){
 		if(!is(seg.sample,"CNVsegs")) {stop("seg.sample must be a CNVsegs object")}
 	}
+  if ( !(as.character(genome) %in% c("hg19","hg38"))){stop("Reference genome assembly is not supported (Use hg19 or hg38)")}
+  
 	SV.sample = as(SV.sample,"data.frame")
 	chromothSample = cluster.SV(SV.sample[SV.sample$chrom1==SV.sample$chrom2,],min.Size=min.Size,chromNames=chromNames) ## pass only intra
 	chromothSample$SV = SV.sample[SV.sample$chrom1==SV.sample$chrom2,]
@@ -242,7 +244,7 @@ shatterseek = function(SV.sample,seg.sample,min.Size=1){
 	
 	out = chromoth(chromSummary=chromSummary,detail=chromothSample)
 	cat("Evaluating the statistical criteria\n")
-	out@chromSummary = statistical_criteria(out)
+	out@chromSummary = statistical_criteria(out, genome)
 	cat("Successfully finished!\n")
 	return(out)
 }

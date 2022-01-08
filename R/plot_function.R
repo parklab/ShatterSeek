@@ -5,19 +5,21 @@
 #' 
 #' @param ShatterSeek_output the output of the function shatterseek
 #' @param chr chromosome for which the plot will be generated (note that only the region where there is a cluster of interleaved SVs will be shown)
+#' @param BAF B allele frequencies (BAF)
 #' @param sample_name name of the sample to be shown in the table
 #' @param DEL_color colour to show the deletion-like SVs
 #' @param DUP_color colour to show the duplication-like SVs
 #' @param t2tINV_color colour to show the t2tINV SVs
 #' @param h2hINV_color colour to show the h2hINV SVs
 #' @param arc_size size of the arcs representing intrachromosomal SVs
+#' @param genome reference genome (hg19 or hg38)
 #' @return a list containing ggplot objects (chromosome ideogram, SVs, CN profile, and table with information about the region)
 #' 
 #' @export
 plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name="",
 								DEL_color='darkorange1',DUP_color='blue1',
 								t2tINV_color="forestgreen",h2hINV_color="black",
-								arc_size=.2){
+								arc_size=.2, genome = "hg19"){
 	chromNames = c( paste0('chr', c(1:22, 'X')) , c(1:22, 'X'))
 	if ( !(as.character(chr) %in% chromNames)){stop("Chromosome not valid")}
 
@@ -248,6 +250,14 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 
 
 	##chr_info = readRDS("/Users/isidro/Dropbox/Park_lab/paper_chromothripsis/chr_info.rds")
+	## Added chrom info for ref genome
+	if(genome == "hg19"){
+	  chr_info <- chr_info
+	}else if(genome == "hg38"){
+	  chr_info <- chr_info_hg38
+	}else{
+	  stop("Reference genome is not supported - Only use hg19 or hg38")
+	}
 	chr_info$color[chr_info$gieStain == "gneg"] = "white"
 	chr_info$color[chr_info$gieStain == "gpos25"] = "grey75"
 	chr_info$color[chr_info$gieStain == "gpos50"] = "grey50"
@@ -262,7 +272,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 
 	ideogram =ggplot(data=chr_info,aes(x=y,y=y)) +geom_point(colour="white")
 	ideogram = ideogram +  
-		geom_rect(data=chr_info,mapping = aes(xmin = chr_info$start, xmax = chr_info$end,   ymin = 0, ymax = 1),
+		geom_rect(data=chr_info,mapping = aes(xmin = start, xmax = end,   ymin = 0, ymax = 1),
 				  fill = chr_info$color,color="black",size=.1) 
 
 	ideogram = ideogram +ylim(0,4)

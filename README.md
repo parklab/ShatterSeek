@@ -48,7 +48,7 @@ install_github("parklab/ShatterSeek")
 ```
 
 # How to use
-Please see the package tutorial (especially section "How to use Shatterkeek").
+Please see the package tutorial (especially section "How to use ShatterSeek").
 
 A few considerations that have caused some confusion in active users:
 

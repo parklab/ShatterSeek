@@ -49,7 +49,12 @@ install_github("parklab/ShatterSeek")
 
 # How to use
 Please see the package tutorial (especially section "How to use Shatterkeek").
-Please note that ShatterSeek expects adjacent copy number segments to have a different copy number value. 
+
+A few considerations that have caused some confusion in active users:
+
+1. Please note that the parameter min.Size of the main function of the package (i.e., shatterseek) is set by default to 1. This parameter defines the minimum number of SVs required to identify a cluster of SVs in each chromosome. The statistical criteria are used to identify which clusters of SVs conform with the features of chromothripsis. For example, we require a minimum number of 6 SVs for a cluster to be considered as chromothripsis. We recommend to use min.Size=1 (default) because in some cases a chromothripsis event in a given chromosome (say chrA) might be linked with a cluster of a few SVs in another chromosomome (say chrB). If the value of min.Size is set to a value higher than 1 (say 6), the connection between these two chromosomes (which might be biologically important) would be missed, as the cluster of SVs in chrB would not be detected.  
+
+2. Please note that ShatterSeek expects adjacent copy number segments to have a different copy number value. 
 If two adjacent regions have the same copy number value but are considered as two separate entries in your copy number
 data.frame, please merge them. You can use the following code:
 

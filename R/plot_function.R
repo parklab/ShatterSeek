@@ -279,7 +279,7 @@ plot_chromothripsis <- function(ShatterSeek_output, chr=chr,BAF=NULL,sample_name
 	ideogram = ideogram + annotate(geom = "text",x = (chr_info_annot$start+chr_info_annot$end)/2,y=chr_info_annot$y + 1.2,
 								   label=chr_info_annot$name,vjust=.5, angle=90,size=2)
 	#ideogram = ideogram +theme_bw() + common_ggplot2_chrom + #xlim(min_coord,max_coord) + 
-	ideogram = ideogram +theme_bw() + common_ggplot2_chrom + xlim(min_coord,max_coord) + 
+	ideogram = ideogram +theme_bw() + common_ggplot2_chrom + #xlim(min_coord,max_coord) + 
 		scale_x_continuous(expand = c(0.01,0.01)) +
 		coord_cartesian(xlim=c(min_coord, max_coord))
 

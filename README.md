@@ -79,7 +79,7 @@ d= dd1; rm(dd)
 Once installed you can run ShatterSeek with example data.
 
 ```R
-library(Shatterkeek)
+library(ShatterSeek)
 data(DO17373)
 ```
 Prepare structural variation (SV) data:

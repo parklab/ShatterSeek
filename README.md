@@ -73,7 +73,7 @@ d= dd1; rm(dd)
 # Contact
 If you have any questions or suggestions please contact us:
 
-Isidro Cortes Ciriano: isidrolauscher at gmail.com or isidro_cortesciriano at hms.harvard.edu
+Isidro Cortes Ciriano: isidrolauscher at gmail.com or icortes@ebi.ac.uk
 
 Peter J Park: peter_park at hms.harvard.edu
 

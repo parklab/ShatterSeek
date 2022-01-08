@@ -244,7 +244,7 @@ shatterseek = function(SV.sample,seg.sample,min.Size=1, genome="hg19"){
 	
 	out = chromoth(chromSummary=chromSummary,detail=chromothSample)
 	cat("Evaluating the statistical criteria\n")
-	out@chromSummary = statistical_criteria(out, genome)
+	out@chromSummary = suppressWarnings(statistical_criteria(out, genome))
 	cat("Successfully finished!\n")
 	return(out)
 }

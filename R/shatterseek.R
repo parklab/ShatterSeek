@@ -229,6 +229,9 @@ shatterseek = function(SV.sample,seg.sample,min.Size=1, genome="hg19"){
   if ( !(as.character(genome) %in% c("hg19","hg38"))){stop("Reference genome assembly is not supported (Use hg19 or hg38)")}
   
 	SV.sample = as(SV.sample,"data.frame")
+	# check that the strand info is correct
+	if (sum(!(SV.sample$strand1 %in% c("+","-")) > 0)){stop("Error in the strand1 column. The strand values can only be + or -")}
+	if (sum(!(SV.sample$strand2 %in% c("+","-")) > 0)){stop("Error in the strand2 column. The strand values can only be + or -")}
 	chromothSample = cluster.SV(SV.sample[SV.sample$chrom1==SV.sample$chrom2,],min.Size=min.Size,chromNames=chromNames) ## pass only intra
 	chromothSample$SV = SV.sample[SV.sample$chrom1==SV.sample$chrom2,]
 	chromothSample$SVinter = SV.sample[SV.sample$chrom1!=SV.sample$chrom2,]

@@ -213,7 +213,7 @@ statistical_criteria = function(input, genome){
         maxnow = summary$end[index_chromosome]
 
         idx_inter1 = which(SVsnow_exp$chrom1 == cand & SVsnow_exp$pos1 >= (minnow) & SVsnow_exp$pos1 <= (maxnow))
-        breaks_inter1= SVsnow_exp$start1[idx_inter1]
+        breaks_inter1= SVsnow_exp$pos1[idx_inter1]
         idx_inter2 = which(SVsnow_exp$chrom2 == cand & SVsnow_exp$pos2 >= (minnow) & SVsnow_exp$pos2 <= (maxnow))
         breaks_inter2= SVsnow_exp$pos2[idx_inter2]
 	

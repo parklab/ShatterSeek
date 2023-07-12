@@ -13,6 +13,7 @@ RUN apt-get install -y libbz2-dev liblzma-dev
 RUN R -e "install.packages(c('devtools'))"
 RUN R -e "install.packages(c('BiocManager'))"
 RUN R -e "install.packages(c('MASS'))"
+RUN R -e "install.packages(c('argparse'))"
 RUN R -e "install.packages(c('tidyverse'))"
 RUN R -e "install.packages(c('gridExtra'))"
 RUN R -e "BiocManager::install('BiocGenerics')"
@@ -23,3 +24,4 @@ RUN R -e "BiocManager::install('IRanges')"
 
 RUN R -e "devtools::install_github('parklab/ShatterSeek')"
 
+RUN R -e "install.packages(c('optparse'))"
